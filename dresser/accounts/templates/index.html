@@ -1,14 +1,19 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ja">
+<head>
+  <!-- link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css'%}"/-->
   <body>
-    <h1>ログインページ</h1>
+    <h1>Dresser</h1>
     {% if user.id  %}
     <p>ログインしました．</p>
     <p>こんにちは，{{ user.username }}さん</p>
-    <a href="{% url 'logout' %}">ログアウトする</a>
+    <a href="{% url 'recommender:recommender' %}">今日のお勧めを見る</a>
+    <a href="{% url 'accounts:profile' %}">マイページへ</a>
+    <a href="{% url 'accounts:logout' %}">ログアウトする</a>
     {% else %}
-    <a href="{% url 'login' %}">ログイン</a>
-    <a href="{% url 'create_account' %}">アカウント作成</a>
+    <a href="{% url 'accounts:login' %}">ログイン</a>
+    <a href="{% url 'accounts:create_account' %}">アカウント作成</a>
     {% endif %}
   </body>
 </html>

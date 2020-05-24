@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+</head>
+  <body>
+    <h1>こんにちは {{user.username}} さん</h1>
+    <p>ユーザーID : {{user.username}}</p>
+    <p>パスワード変更</p>
+    <a href="{% url 'accounts:index' %}">インデックスページに戻る</a>
+  </body>
+</html>

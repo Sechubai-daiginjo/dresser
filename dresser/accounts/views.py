@@ -49,3 +49,8 @@ class Account_login(View):
         return render(request, 'login.html', {'form': form,})
 
 account_login = Account_login.as_view()
+
+#マイページ
+class Profile(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'profile.html')
