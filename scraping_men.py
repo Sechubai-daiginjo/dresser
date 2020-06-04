@@ -45,25 +45,33 @@ def make_contents(item_list):
     contents = []
     for x in item_list:
         if "goodsName" in x:
+            x = x.replace("goodsName: ", "")
             contents.append(x)
         elif "color" in x:
             x = x.strip("\r\n\t\t}\r\n\t\tvar shopCommonConf = {\r\n\t\t\twebPathAnalyze: 'https://az.zozo.jp/'")
+            x = x.replace("color: ", "")
             contents.append(x)
-        elif "tbname" in x:
+        elif "tbpath" in x:
+            x = x.replace("tbpath: ", "")
             contents.append(x)
         elif "price" in x:
+            x = x.replace("price: ", "")
+            x = x.replace(",", "")
             contents.append(x)
         elif "TypeCategoryPath" in x:
+            x = x.replace("TypeCategoryPath: ", "")
             contents.append(x)
         elif "GoodsTypePath" in x:
+            x = x.replace("GoodsTypePath: ", "")
             contents.append(x)
         elif "DefaultImagePath" in x:
+            x = x.replace("DefaultImagePath: ", "")
             contents.append(x)
     return contents
 
 # 出力
 def output(contents, f):
-    f.write(", ".join(contents))
+    f.write(",".join(contents))
     f.write("\n")
 
 # 関数呼び出し
@@ -93,7 +101,7 @@ import re
 list = ['tops', 'pants', 'jacket-outerwear']
 index = 0
 while index < len(list):
-    f = open('men_{}.txt'.format(list[index]), "w", encoding = "utf_8")
+    f = open('./clothes/men_{}.txt'.format(list[index]), "w", encoding = "utf_8")
     do_func(list, index)
     print("Next category")
     index += 1
