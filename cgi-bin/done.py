@@ -34,7 +34,7 @@ cookie = cookies.SimpleCookie(os.environ.get("HTTP_COOKIE",""))
 
 #user_id = form['user_id'].value
 user = cookie['user'].value
-#cgitb.enable()
+cgitb.enable()
 conn = sqlite3.connect('../clothes/dresser.db')
 c = conn.cursor()
 # クッキーを生成しuser_id を遷移先のページに渡す
