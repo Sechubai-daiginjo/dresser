@@ -6,7 +6,7 @@ import textwrap
 import io,sys
 # UnicodeEncodeErrorを防ぐ
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
-cgitb.enable()
+#cgitb.enable()
 
 print("Content-Type: text/html; charset=UTF-8\n\n")
 html ='''

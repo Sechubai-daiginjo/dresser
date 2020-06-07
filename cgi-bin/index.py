@@ -7,6 +7,7 @@ def check_cookie(cookie):
         <h2>Welcome {0}!</h2>
         <a href>マイページへ</a>
         <a href='./recommender.py'>Today's Coordination</a>
+        <a href='./retrieval.py'>
         '''.format(cookie['user'].value)
     else:
         str = '''
