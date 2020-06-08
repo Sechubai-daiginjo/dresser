@@ -23,7 +23,7 @@ import io,sys
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 cgitb.enable()
-conn = sqlite3.connect('./clothes/dresser.db')
+conn = sqlite3.connect('../clothes/dresser.db')
 c = conn.cursor()
 
 print("Content-Type: text/html; charset=UTF-8\n\n")
@@ -34,7 +34,7 @@ html = textwrap.dedent('''
 <title>Dresser</title>
 </head>
     <body>
-      
+
     </body>
 </html>
 ''').format(display_user_data()).strip()

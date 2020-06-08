@@ -35,7 +35,10 @@ cookie = cookies.SimpleCookie(os.environ.get("HTTP_COOKIE",""))
 #user_id = form['user_id'].value
 user = cookie['user'].value
 cgitb.enable()
+#ローカル
 conn = sqlite3.connect('./clothes/dresser.db')
+#本番環境
+#conn = sqlite3.connect('../clothes/dresser.db')
 c = conn.cursor()
 # クッキーを生成しuser_id を遷移先のページに渡す
 print("Set-Cookie: user="+ user)
@@ -71,6 +74,7 @@ html = textwrap.dedent('''
     </div>
 
     </body>
+<<<<<<< HEAD
     <div class="fh5co-section">
 		<div class="container">
 
@@ -81,6 +85,9 @@ html = textwrap.dedent('''
             </div>
         </div>
     </div>
+=======
+    <a href='./index.py'>Back to Index Page</a>
+>>>>>>> 13d6d7c4ed258e5b4c37bc8ca070d21e6006afb4
 </html>
 ''').strip()
 print(html)
