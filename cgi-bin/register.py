@@ -50,8 +50,11 @@ def get_basic_clothes(form, c):
             c.execute("SELECT DefaultImagePath, GoodsTypePath FROM basic_men WHERE TypeCategoryPath = '{}' order by random() limit 5;".format(category))
             for row in c:
                 str += textwrap.dedent('''
-                <img src={} />
-                <p><input type="checkbox" name="{}" value="{}" > I have like this one</p>
+				<div class="col-md-6">                
+                    <img src={} />
+                    <h3><input type="checkbox" name="{}" value="{}" > I have like this one</h3>
+                    <br></br>
+                </div>  
                 ''').format(row[0], row[1], row[1])
 
 
@@ -61,15 +64,24 @@ def get_basic_clothes(form, c):
             c.execute("SELECT DefaultImagePath, GoodsTypePath FROM basic_women WHERE TypeCategoryPath = '{}' order by random() limit 5;".format(category))
             for row in c:
                 str += textwrap.dedent('''
-                <img src={} />
-                <p><input type="checkbox" name="{}" value="{}" > I have like this one</p>
+				<div class="col-md-6">
+                    <img src={} />
+                    <h3><input type="checkbox" name="{}" value="{}" > I have like this one</h3>
+                    <br></br>
+                </div>
                 ''').format(row[0], row[1], row[1])
 
     else:
         print('Something Wrong ')
         exit()
     str += textwrap.dedent('''
-    <p><input type="submit" value="Register your clothes"></p>
+
+			<div class="row">
+				<div class="col-md-2 col-md-push-5">
+                    <h3><input type="submit" value="Register your clothes"></h3>
+                </div>
+            </div>
+        
     </form>
     ''')
     return str
@@ -123,12 +135,36 @@ html = textwrap.dedent('''
 <html lang = "ja">
 <head>
 <title>Dresser</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/animate.css">
+<link rel="stylesheet" href="../css/bootstrap.css">
+<link rel="stylesheet" href="../css/icomoon.css">
 </head>
-    <body>
-      <h1>Update Completed!</h1>
-      <h2>Please register your clothes</h2>
+
+<body style="background-color: #ffefd5;">
+    <div class="fh5co-section">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-12">
+                    <h1>Update Completed!</h1>
+                </div>
+                <div class="col-md-12">               
+                    <h2>Please register your clothes</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fh5co-section">
+		<div class="container">
+
+			<div class="row">    
         {0}
-    </body>
+            </div>
+        </div>
+    </div>
+</body>
 </html>
 ''').format(do_func(c, user_id)).strip()
 print(html)

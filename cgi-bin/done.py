@@ -46,13 +46,41 @@ html = textwrap.dedent('''
 <html lang = "ja">
 <head>
 <title>Dresser</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/animate.css">
+<link rel="stylesheet" href="../css/bootstrap.css">
+<link rel="stylesheet" href="../css/icomoon.css">
 </head>
-    <body>
-      <h1>Update Completed!</h1>
-        <p>Your account was created! </p>
-        <p>You can enjoy our APP! </p>
+    
+<body style="background-color: #ffefd5;">
+    <div class="fh5co-section">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-12">
+                    <h1>Update Completed!</h1>
+                </div>
+                <div class="col-md-12">
+                    <h3>Your account was created! </h3>
+                </div>
+                <div class="col-md-12">
+                    <h3>You can enjoy our APP! </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
     </body>
-    <a href='./index.py'>トップに戻る</a>
+    <div class="fh5co-section">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-12">
+                    <a href='./index.py'>トップに戻る</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </html>
 ''').strip()
 print(html)

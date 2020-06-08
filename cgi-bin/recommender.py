@@ -40,9 +40,36 @@ def get_clothes(c, weather_data, user):
     temp_max = weather_data[5]
     str = ""
     str += textwrap.dedent('''
-        <p>{weather}</p>
-        <p>{temp_max}</p>
-        <p>{temp_min}</p>
+        <div class="fh5co-section">
+			<div class="container">
+
+				<div class="row">
+					<div class="col-md-4">
+                      <h2>
+                        Weather
+                        <p>{weather}</p>
+                      </h2>
+					</div>
+                    <div class="col-md-4">
+                      <h2>
+                        Highest Temperature
+                        <p>{temp_max}</p>
+                      </h2>
+                    </div>
+                    <div class="col-md-4">
+                      <h2>
+                        Lowest Temperature
+                        <p>{temp_min}</p>
+                      </h2>
+                    </div>
+                </div>
+
+			</div>
+		</div>
+        
+        <div class="fh5co-section">
+			<div class="container">
+				<div class="row">
     ''').format(weather=weather, temp_max=temp_max, temp_min=temp_min)
 
     c.execute("SELECT GoodsTypePath FROM users_clothes WHERE userid = '{}' ;".format(user))
@@ -60,8 +87,14 @@ def get_clothes(c, weather_data, user):
                     count.append('tops')
                     for src in c:
                         str += textwrap.dedent('''
-                        <p>tops</p>
-                        <img src={} />
+					    <div class="col-md-6">
+                            <h1>
+                                <p>Tops</p>
+                            </h1>
+                            <h2>
+                                <img src={} />
+                            </h2>
+                        </div>   
                         ''').format(src[0])
 
                 elif int(temp_max) >= 23 and row == ' shirt-blouse' and 'tops' not in count:
@@ -69,8 +102,14 @@ def get_clothes(c, weather_data, user):
                     count.append('tops')
                     for src in c:
                         str += textwrap.dedent('''
-                        <p>tops</p>
-                        <img src={} />
+					    <div class="col-md-6">
+                             <h1>
+                                <p>Tops</p>
+                            </h1>
+                            <h2>
+                                <img src={} />
+                            </h2>
+                        </div>      
                         ''').format(src[0])
 
                 elif int(temp_max) >= 23 and row == ' polo-shirt' and 'tops' not in count:
@@ -78,23 +117,41 @@ def get_clothes(c, weather_data, user):
                     count.append('tops')
                     for src in c:
                         str += textwrap.dedent('''
-                        <p>tops</p>
-                        <img src={} />
+					    <div class="col-md-6">
+                            <h1>
+                                <p>Tops</p>
+                            </h1>
+                            <h2>
+                                <img src={} />
+                            </h2>
+                        </div>  
                         ''').format(src[0])
 
                 elif int(temp_max) >= 17 and temp_max < 23 and row == ' tshirt-cutsew' and 'tops' not in count:
                     c.execute("SELECT DefaultImagePath FROM men_ranking WHERE TypeCategoryPath = 'jacket-outerwear' order by RANDOM() limit 1;")
                     for src in c:
                         str += textwrap.dedent('''
-                        <p>tops</p>
-                        <img src={} />
+					    <div class="col-md-6">
+                            <h1>
+                                <p>Tops</p>
+                            </h1>
+                            <h2>
+                                <img src={} />
+                            </h2>
+                        </div>
                         ''').format(src[0])
                     c.execute("SELECT DefaultImagePath FROM men_ranking WHERE TypeCategoryPath = 'tshirt-cutsew' order by RANDOM() limit 1;")
                     count.append('tops')
                     for src in c:
                         str += textwrap.dedent('''
-                        <p>tops</p>
-                        <img src={} />
+					    <div class="col-md-6">
+                            <h1>
+                                <p>Tops</p>
+                            </h1>
+                            <h2>
+                                <img src={} />
+                            </h2>
+                        </div>
                         ''').format(src[0])
 
                 elif int(temp_max) < 17 and row == ' parka' and 'tops' not in count:
@@ -102,8 +159,14 @@ def get_clothes(c, weather_data, user):
                     count.append('tops')
                     for src in c:
                         str = textwrap.dedent('''
-                        <p>tops</p>
-                        <img src={} />
+					    <div class="col-md-6">
+                            <h1>
+                                <p>Tops</p>
+                            </h1>
+                            <h2>
+                                <img src={} />
+                            </h2>
+                        </div>
                         ''').format(src[0])
 
 
@@ -112,8 +175,14 @@ def get_clothes(c, weather_data, user):
                 c.execute("SELECT DefaultImagePath FROM men_ranking WHERE GoodsTypePath = '{}' order by RANDOM() limit 1;".format(row))
                 for src in c:
                     str += textwrap.dedent('''
-                    <p>pants</p>
-                    <img src={} />
+					<div class="col-md-6">
+                        <h1>
+                            <p>Pants</p>
+                        </h1>
+                        <h2>
+                            <img src={} />
+                        </h2>
+                    </div>  
                     ''').format(src[0])
                 count.append('pants')
 
@@ -127,8 +196,14 @@ def get_clothes(c, weather_data, user):
                     count.append('onepiece')
                     for src in c:
                         str += textwrap.dedent('''
-                        <p>tops</p>
-                        <img src={} />
+					    <div class="col-md-6">
+                            <h1>
+                                <p>Tops</p>
+                            </h1>
+                            <h2>
+                                <img src={} />
+                            </h2>
+                        </div>  
                         ''').format(src[0])
 
                 elif int(temp_max) >= 23 and row == ' shirt-blouse' and 'tops' not in count:
@@ -137,8 +212,14 @@ def get_clothes(c, weather_data, user):
                     count.append('onepiece')
                     for src in c:
                         str += textwrap.dedent('''
-                        <p>tops</p>
-                        <img src={} />
+					    <div class="col-md-6">
+                            <h1>
+                                <p>Tops</p>
+                            </h1>
+                            <h2>
+                                <img src={} />
+                            </h2>
+                        </div>
                         ''').format(src[0])
 
                 elif int(temp_max) >= 23 and row == ' knit-sweater' and 'tops' not in count:
@@ -147,24 +228,42 @@ def get_clothes(c, weather_data, user):
                     count.append('onepiece')
                     for src in c:
                         str += textwrap.dedent('''
-                        <p>tops</p>
-                        <img src={} />
+					    <div class="col-md-6">
+                            <h1>
+                                <p>Tops</p>
+                            </h1>
+                            <h2>
+                                <img src={} />
+                            </h2>
+                        </div>
                         ''').format(src[0])
 
                 elif int(temp_max) >= 17 and temp_max < 23 and row == ' tshirt-cutsew' and 'tops' not in count:
                     c.execute("SELECT DefaultImagePath FROM women_ranking WHERE TypeCategoryPath = 'jacket-outerwear' order by RANDOM() limit 1;")
                     for src in c:
                         str += textwrap.dedent('''
-                        <p>outerwear</p>
-                        <img src={} />
+					    <div class="col-md-6">
+                            <h1>
+                                <p>Outerwear</p>
+                            </h1>
+                            <h2>
+                                <img src={} />
+                            </h2>
+                        </div>
                         ''').format(src[0])
                     c.execute("SELECT DefaultImagePath FROM women_ranking WHERE TypeCategoryPath = 'tshirt-cutsew' order by RANDOM() limit 1;")
                     count.append('tops')
                     count.append('onepiece')
                     for src in c:
                         str += textwrap.dedent('''
-                        <p>tops</p>
-                        <img src={} />
+					    <div class="col-md-6">
+                            <h1>
+                                <p>Tops</p>
+                            </h1>
+                            <h2>
+                                <img src={} />
+                            </h2>
+                        </div> 
                         ''').format(src[0])
 
                 elif int(temp_max) < 17 and row == ' parka' and 'tops' not in count:
@@ -173,16 +272,28 @@ def get_clothes(c, weather_data, user):
                     count.append('onepiece')
                     for src in c:
                         str += textwrap.dedent('''
-                        <p>tops</p>
-                        <img src={} />
+					    <div class="col-md-6">
+                            <h1>
+                                <p>Tops</p>
+                            </h1>
+                            <h2>
+                                <img src={} />
+                            </h2>
+                        </div>
                         ''').format(src[0])
             elif (row == ' denim-pants' or row == ' pants' or row ==' skirt') and 'pants' not in count:
                 row = row.lstrip()
                 c.execute("SELECT DefaultImagePath FROM women_ranking WHERE GoodsTypePath = '{}' order by RANDOM() limit 1;".format(row))
                 for src in c:
                     str += textwrap.dedent('''
-                    <p>pants or skirt</p>
-                    <img src={} />
+					<div class="col-md-6">
+                        <h1>
+                            <p>Pants or Skirt</p>
+                        </h1>
+                        <h2>
+                            <img src={} />
+                        </h2>
+                    </div>   
                     ''').format(src[0])
                 count.append('pants')
                 count.append('onepiece')
@@ -192,8 +303,14 @@ def get_clothes(c, weather_data, user):
                 c.execute("SELECT DefaultImagePath FROM women_ranking WHERE GoodsTypePath = '{}' order by RANDOM() limit 1;".format(row))
                 for src in c:
                     str += textwrap.dedent('''
-                    <p>onepiece</p>
-                    <img src={} />
+					<div class="col-md-6">
+                        <h1>
+                            <p>Onepiece</p>
+                        </h1>
+                        <h2>
+                            <img src={} />
+                        </h2>
+                    </div>
                     ''').format(src[0])
                 count.append('onepiece')
                 count.append('tops')
@@ -209,7 +326,15 @@ def do_func():
     #print(weather_data)
     get = get_clothes(c, weather_data, user)
     str = textwrap.dedent('''
-    <h2>Today's Coordination for You!</h2>
+    <div class="fh5co-section">
+		<div class="container">
+            <div class="row">
+				<div class="col-md-12">
+                    <h1>Today's Coordination for You!</h1>
+                </div>
+            </div>
+        </div>
+    </div>
     {get}
     ''').format(get=get)
     return str
@@ -250,10 +375,37 @@ html = textwrap.dedent('''
 <html lang = "ja">
 <head>
 <title>Dresser</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/animate.css">
+<link rel="stylesheet" href="../css/bootstrap.css">
+<link rel="stylesheet" href="../css/icomoon.css">
 </head>
-  <body>
-    <h1>Dresser</h1>
+  
+<body>
+  <div id="fh5co-wrap" style="background-color: #EEEEEE;">
+  	<header id="fh5co-header">
+			<div class="container">
+				<nav class="fh5co-main-nav">
+          <h1>Dresser</h1>
+        </nav>
+			</div>
+		</header>
+
+	<div class="fh5co-section">
+		<div class="container">
+        <div class="row">
+        <div style="width:1200px;margin-left:auto;margin-right:auto;text-align:center;background-color: #FFFFFF;">
+
     {}
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
 ''').format(do_func())

@@ -41,15 +41,43 @@ print("Content-Type: text/html; charset=UTF-8\n\n")
 html = '''
 <!DOCTYPE html>
 <html lang = "ja">
+
 <head>
 <title>Dresser</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/animate.css">
+<link rel="stylesheet" href="../css/bootstrap.css">
+<link rel="stylesheet" href="../css/icomoon.css">
 </head>
-  <body>
-    <h1>Dresser</h1>
-    {get}
-    <h2>About Our App</h2>
-    <p>Fashion Coordinates Recommender and Searching System Using Weather Forecast in Summer Season</p>
-  </body>
+
+<body>
+  <div id="fh5co-wrap">
+  	<header id="fh5co-header">
+			<div class="container">
+				<nav class="fh5co-main-nav">
+                  <h1>Dresser</h1>
+				</nav>
+			</div>
+		</header>
+
+		<div class="fh5co-hero" style="background-image: url(../images/hero_4.jpg);" data-stellar-background-ratio="0.5">
+			<div class="overlay"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
+						<div class="fh5co-intro fh5co-table-cell">
+              <h2>{get}</h2>
+              <h1>About Our App</h1>
+              <p>Fashion Coordinates Recommender and Searching System Using Weather Forecast in Summer Season</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+  </div>
+</body>
+
 </html>
 '''.format(get = check_cookie(cookie)).strip()
 
