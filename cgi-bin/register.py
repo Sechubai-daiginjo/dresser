@@ -112,7 +112,10 @@ form = cgi.FieldStorage()
 cookie = cookies.SimpleCookie()
 user_id = form['user_id'].value
 cgitb.enable()
-conn = sqlite3.connect('../clothes/dresser.db')
+#ローカル
+conn = sqlite3.connect('./clothes/dresser.db')
+#本番環境
+#conn = sqlite3.connect('../clothes/dresser.db')
 c = conn.cursor()
 # クッキーを生成しuser_id を遷移先のページに渡す
 print("Set-Cookie: user="+ user_id)

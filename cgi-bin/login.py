@@ -36,12 +36,14 @@ import io,sys
 # UnicodeEncodeErrorを防ぐ
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 cgitb.enable()
-conn = sqlite3.connect('../clothes/dresser.db')
+#ローカル
+conn = sqlite3.connect('./clothes/dresser.db')
+#本番環境
+#conn = sqlite3.connect('../clothes/dresser.db')
 c = conn.cursor()
 form = cgi.FieldStorage()
 user_id = form['user_id'].value
-#cookie_dat = cookies.SimpleCookie()
-#cookie['user'] = user_id
+
 # クッキーを生成しuser_id を遷移先のページに渡す
 print("Set-Cookie: user="+ user_id)
 print("Content-Type: text/html; charset=UTF-8\n\n")

@@ -238,7 +238,10 @@ cgitb.enable()
 if 'user' in cookie:
     user = cookie['user'].value
     print("Set-Cookie: user="+ user)
-conn = sqlite3.connect('../clothes/dresser.db')
+#ローカル
+conn = sqlite3.connect('./clothes/dresser.db')
+#本番環境
+#conn = sqlite3.connect('../clothes/dresser.db')
 c = conn.cursor()
 
 
@@ -254,6 +257,7 @@ html = textwrap.dedent('''
   <body>
     <h1>Dresser</h1>
     {}
+    <a href='./index.py'>Back to Index Page</a>
   </body>
 </html>
 ''').format(do_func())

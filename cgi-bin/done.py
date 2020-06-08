@@ -35,7 +35,10 @@ cookie = cookies.SimpleCookie(os.environ.get("HTTP_COOKIE",""))
 #user_id = form['user_id'].value
 user = cookie['user'].value
 cgitb.enable()
-conn = sqlite3.connect('../clothes/dresser.db')
+#ローカル
+conn = sqlite3.connect('./clothes/dresser.db')
+#本番環境
+#conn = sqlite3.connect('../clothes/dresser.db')
 c = conn.cursor()
 # クッキーを生成しuser_id を遷移先のページに渡す
 print("Set-Cookie: user="+ user)
@@ -52,7 +55,7 @@ html = textwrap.dedent('''
         <p>Your account was created! </p>
         <p>You can enjoy our APP! </p>
     </body>
-    <a href='./index.py'>トップに戻る</a>
+    <a href='./index.py'>Back to Index Page</a>
 </html>
 ''').strip()
 print(html)
