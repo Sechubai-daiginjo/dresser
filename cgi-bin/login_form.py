@@ -18,7 +18,7 @@ html ='''
 <link rel="stylesheet" href="../css/animate.css">
 <link rel="stylesheet" href="../css/bootstrap.css">
 <link rel="stylesheet" href="../css/icomoon.css">
-c
+<link rel="stylesheet" href="../css/test.css">
 <script type="text/javascript" src="../check.js"></script>
 </head>
 
@@ -26,23 +26,23 @@ c
 <div id="fh5co-wrap">
     <div class="large-div">
   	    <header id="fh5co-header">
-		        <div class="container">
-			          <div class="row">
-				            <div class="col-md-4">
+		    <div class="container">
+			    <div class="row">
+				    <div class="col-md-4">
                         <h1>Dresser</h1>
-				            </div>
-			          </div>
+				    </div>
+			    </div>
             </div>
-	      </header>
+	    </header>
 
-	      <div class="fh5co-section">
-		        <div class="container">
+	    <div class="fh5co-section">
+		    <div class="container">
                 <div class="row">
                     <div class="login-div">
                         <div class="row">
-					                  <div class="col-md-12">
+					        <div class="col-md-12">
                                 <div class="row">
-							                      <div class="col-md-12">
+							        <div class="col-md-12">
                                         <h2>Twitterでログイン</h2>
                                     </div>
                                 </div>
@@ -81,14 +81,14 @@ c
 </div>
 
 <footer id="fh5co-footer">
-	  <div class="container">
-		    <div class="row">
+	<div class="container">
+		<div class="row">
             <div class="col-md-4">
-				        <h3>About Us</h3>
-				        <p class="footer-font">Fashion Coordinates Recommender and Searching System Using Weather Forecast in Summer Season</p>
-			      </div>
+				<h3>About Us</h3>
+				<p class="footer-font">Fashion Coordinates Recommender and Searching System Using Weather Forecast in Summer Season</p>
+			</div>
         </div>
-	  </div>
+	</div>
 </footer>
 
 </body>
