@@ -40,9 +40,6 @@ def get_clothes(c, weather_data, user):
     temp_max = weather_data[5]
     str = ""
     str += textwrap.dedent('''
-        <div class="fh5co-section">
-			<div class="container">
-
 				<div class="row">
 					<div class="col-md-4">
                       <h2>
@@ -64,12 +61,6 @@ def get_clothes(c, weather_data, user):
                     </div>
                 </div>
 
-			</div>
-		</div>
-        
-        <div class="fh5co-section">
-			<div class="container">
-				<div class="row">
     ''').format(weather=weather, temp_max=temp_max, temp_min=temp_min)
 
     c.execute("SELECT GoodsTypePath FROM users_clothes WHERE userid = '{}' ;".format(user))
@@ -382,38 +373,56 @@ html = textwrap.dedent('''
 <link rel="stylesheet" href="../css/animate.css">
 <link rel="stylesheet" href="../css/bootstrap.css">
 <link rel="stylesheet" href="../css/icomoon.css">
+<link rel="stylesheet" href="../css/test.css">
 </head>
   
 <body>
-  <div id="fh5co-wrap" style="background-color: #EEEEEE;">
-  	<header id="fh5co-header">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4">
-                    <h1>Dresser</h1>
-				</div>
-			</div>
-        </div>
-	</header>
+<div id="fh5co-wrap">
+    <div class="large-div">
+  	    <header id="fh5co-header">
+		    <div class="container">
+			    <div class="row">
+				    <div class="col-md-4">
+                        <h1>Dresser</h1>
+				    </div>
+			    </div>
+            </div>
+	    </header>
 
-	<div class="fh5co-section">
-		<div class="container">
-        <div class="row">
-        <div style="width:1200px;margin-left:auto;margin-right:auto;text-align:center;background-color: #FFFFFF;">
-
-    {}
-
+	    <div class="fh5co-section">
+		    <div class="container">
+                <div class="row">
+                    <div class="middle-div">
+                        <div class="row">
+                            <div class="col-md-12">
+                                {}
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            </br>
+                            <h4><a href='./index.py'>Back to Index Page</a></h4>
+                        </div>
                     </div>
                 </div>
             </div>
-
         </div>
-        </div>
-      </div>
     </div>
+</div>
 
-    <a href='./index.py'>Back to Index Page</a>
-  </body>
+
+
+<footer id="fh5co-footer">
+	<div class="container">
+		<div class="row">
+            <div class="col-md-4">
+				<h3>About Us</h3>
+				<p class="footer-font">Fashion Coordinates Recommender and Searching System Using Weather Forecast in Summer Season</p>
+			</div>
+        </div>
+	</div>
+</footer>
+
+</body>
 </html>
 ''').format(do_func())
 print(html)

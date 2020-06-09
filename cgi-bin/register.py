@@ -76,11 +76,9 @@ def get_basic_clothes(form, c):
         exit()
     str += textwrap.dedent('''
 
-			<div class="row">
-				<div class="col-md-2 col-md-push-5">
-                    <h3><input type="submit" value="Register your clothes"></h3>
-                </div>
-            </div>
+	<div class="col-md-2 col-md-push-5">
+        <h3><input type="submit" value="Register your clothes" class="btn btn-primary"></h3>
+    </div>
         
     </form>
     ''')
@@ -142,31 +140,54 @@ html = textwrap.dedent('''
 <link rel="stylesheet" href="../css/animate.css">
 <link rel="stylesheet" href="../css/bootstrap.css">
 <link rel="stylesheet" href="../css/icomoon.css">
+<link rel="stylesheet" href="../css/test.css">
 </head>
 
 <body style="background-color: #ffefd5;">
-    <div class="fh5co-section">
-		<div class="container">
+<div id="fh5co-wrap">
+    <div class="large-div">
+  	    <header id="fh5co-header">
+		    <div class="container">
+			    <div class="row">
+				    <div class="col-md-4">
+                        <h1>Dresser</h1>
+				    </div>
+			    </div>
+            </div>
+	    </header>
 
-			<div class="row">
-				<div class="col-md-12">
-                    <h1>Update Completed!</h1>
-                </div>
-                <div class="col-md-12">               
-                    <h2>Please register your clothes</h2>
+        <div class="fh5co-section">
+		    <div class="container">
+			    <div class="row">
+                    <div class="middle-div">
+				        <div class="row">
+				            <div class="col-md-12">
+                                <h1>Update Completed!</h1>
+                            </div>
+                            <div class="col-md-12">               
+                                <h2>Please register your clothes</h2>
+                            </div>   
+                            {0}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
+</div>
 
-    <div class="fh5co-section">
-		<div class="container">
-
-			<div class="row">    
-        {0}
-            </div>
+<footer id="fh5co-footer">
+	  <div class="container">
+		    <div class="row">
+            <div class="col-md-4">
+				        <h3>About Us</h3>
+				        <p class="footer-font">Fashion Coordinates Recommender and Searching System Using Weather Forecast in Summer Season</p>
+			      </div>
         </div>
-    </div>
+	  </div>
+</footer>
+
 </body>
 </html>
 ''').format(do_func(c, user_id)).strip()

@@ -43,7 +43,7 @@ def retrieve_clothes(c, cookie):
             str += textwrap.dedent('''
             <form action="./retrieval.py" method="GET">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-2 col-md-push-3">
                         <select name="type">
                         <option value="tshirt-cutsew">tshirt-cutsew</option>
                         <option value="shirt-blouse">shirt-blouse</option>
@@ -58,8 +58,8 @@ def retrieve_clothes(c, cookie):
                         <option value="other-outer">other-outer</option>
                         </select>
                     </div>
-                    <div class="col-md-6">
-                        <input type="submit" value="Let's Look Popular Clothes">
+                    <div class="col-md-2 col-md-push-4">
+                        <input type="submit" value="Let's Look Popular Clothes" class="btn btn-primary">
                     </div>
                 </div>
             </form>
@@ -69,7 +69,7 @@ def retrieve_clothes(c, cookie):
             str += textwrap.dedent('''
             <form action="./retrieval.py" method="GET">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-2 col-md-push-3">
                         <select name="type">
                         <option value="tshirt-cutsew">tshirt-cutsew</option>
                         <option value="shirt-blouse">shirt-blouse</option>
@@ -86,8 +86,8 @@ def retrieve_clothes(c, cookie):
                         <option value="other-outer">other-outer</option>
                         </select>
                     </div>
-                    <div class="col-md-6">
-                        <input type="submit" value="Let's Look Popular Clothes">
+                    <div class="col-md-2 col-md-push-4">
+                        <input type="submit" value="Let's Look Popular Clothes" class="btn btn-primary">
                     </div>
                 </div>
             </form>
@@ -132,10 +132,11 @@ html = '''
 <link rel="stylesheet" href="../css/animate.css">
 <link rel="stylesheet" href="../css/bootstrap.css">
 <link rel="stylesheet" href="../css/icomoon.css">
+<link rel="stylesheet" href="../css/test.css">
 </head>
 
 <body>
-  <div id="fh5co-wrap">
+<div id="fh5co-wrap">
   	<header id="fh5co-header">
 		<div class="container">
 			<div class="row">
@@ -146,27 +147,39 @@ html = '''
         </div>
 	</header>
 
-		<div class="fh5co-hero" style="background-image: url(../images/hero_4.jpg);" data-stellar-background-ratio="0.5">
-			<div class="overlay"></div>
+	<div class="fh5co-hero" style="background-image: url(../images/hero_4.jpg);" data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
 						<div class="fh5co-intro fh5co-table-cell">
-              <h2>
-                  {get}
-                  {retrieval}
-              </h2>
-              <h1>About Our App</h1>
-              <p>Fashion Coordinates Recommender and Searching System Using Weather Forecast in Summer Season</p>
+                            <h2>
+                                {get}
+                            </h2>
+                                {retrieval}
+                            
+                            <h1>About Our App</h1>
+                            <p>Fashion Coordinates Recommender and Searching System Using Weather Forecast in Summer Season</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+    </div>
+</div>
 
-  </div>
+<footer id="fh5co-footer">
+	<div class="container">
+		<div class="row">
+            <div class="col-md-4">
+				<h3>About Us</h3>
+				<p class="footer-font">Fashion Coordinates Recommender and Searching System Using Weather Forecast in Summer Season</p>
+			</div>
+        </div>
+	</div>
+</footer>
+
 </body>
-
 </html>
 '''.format(get = check_cookie(cookie), retrieval = retrieve_clothes(c, cookie)).strip()
 

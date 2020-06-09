@@ -1,3 +1,80 @@
 .test {
     background-color: #EEEEEE;
   }
+
+  .test {
+    background-color: #7f7f7f;
+  }
+  
+  .retrieval {
+
+  }
+    
+  table {
+    margin-left: auto;
+    margin-right: auto;
+    width:900px;
+    border-style: solid;
+    border-width: 1px;
+  }
+  
+  table tr {
+    text-align: center;
+  }
+  
+  table th, table td {
+    text-align: center;
+    border: solid 1px black;
+    border-style: double;
+    border-width: 2px;
+  }
+
+  .retrieval tr th:nth-child(1) {
+    font-size: 150%;
+    width: 50%;
+    padding: 15px;
+    background-color: aliceblue;
+  }
+
+  .retrieval tr th:nth-child(2) {
+    font-size: 150%;
+    width: 30%;
+    padding: 15px;
+    background-color: aliceblue;
+  }
+
+  .retrieval tr th:nth-child(3) {
+    font-size: 150%;
+    width: 20%;
+    padding: 15px;
+    background-color: aliceblue;
+  }
+
+  .foto_size {
+    width: 450px;
+    height: 500px;
+  }
+
+  .middle-div {
+    width:1200px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    background-color: #FFFFFF;
+  }
+
+  .footer-font {
+    color: #d3d3d3;
+  }
+
+  .large-div {
+    background-color: #ffefd5;
+  }
+
+  .login-div {
+    width:550px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    background-color: #FFFFFF;
+  }
