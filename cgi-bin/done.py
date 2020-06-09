@@ -74,20 +74,17 @@ html = textwrap.dedent('''
     </div>
 
     </body>
-<<<<<<< HEAD
+
     <div class="fh5co-section">
 		<div class="container">
 
 			<div class="row">
 				<div class="col-md-12">
-                    <a href='./index.py'>トップに戻る</a>
+                    <a href='./index.py'>Back to Index Page</a>
                 </div>
             </div>
         </div>
     </div>
-=======
-    <a href='./index.py'>Back to Index Page</a>
->>>>>>> 13d6d7c4ed258e5b4c37bc8ca070d21e6006afb4
 </html>
 ''').strip()
 print(html)

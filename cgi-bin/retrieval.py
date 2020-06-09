@@ -53,7 +53,7 @@ def get_clothes(c):
     form = cgi.FieldStorage()
     type = form['type'].value
     str = textwrap.dedent('''
-    <table border="1">
+    
     <tr>
      <th>Looks</th>
      <th>Name</th>
@@ -72,7 +72,7 @@ def get_clothes(c):
              <td><img src={row1} /></td>
              <td>{row2}</td>
              <td>{row3}</td>
-            <tr>
+            </tr>
             ''').format(row1=row[-1], row2=row[0], row3=row[3])
 
     elif gender == 'women':
@@ -83,7 +83,7 @@ def get_clothes(c):
              <td><img src={row1} /></td>
              <td>{row2}</td>
              <td>{row3}</td>
-            <tr>
+            </tr>
             ''').format(row1=row[-1], row2=row[0], row3=row[3])
     return str
 #---------------------------------------------
@@ -115,16 +115,54 @@ html = '''
 <!DOCTYPE html>
 <html lang = "ja">
 <head>
+<meta charset="utf-8">
 <title>Dresser</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/animate.css">
+<link rel="stylesheet" href="../css/bootstrap.css">
+<link rel="stylesheet" href="../css/icomoon.css">
 </head>
-  <body>
-    <h1>Dresser</h1>
-    <h2>Let's Look Popular Clothes</h2>
-    {form}
-    {image}
-    <br>
-    <a href='./index.py'>Back to Index Page</a>
-  </body>
+
+<body>
+<div>
+  <div id="fh5co-wrap" style="background-color: #ffefd5;">
+  	<header id="fh5co-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+                    <h1>Dresser</h1>
+				</div>
+			</div>
+        </div>
+	</header>
+    
+    <div class="fh5co-section">
+		<div class="container">
+            <div class="row">
+                <div style="width:1200px;margin-left:auto;margin-right:auto;text-align:center;background-color: #FFFFFF;">
+				<div class="row">
+                    <div class="col-md-12">
+                        <h2>Let's Look Popular Clothes</h2>
+                    </div>
+                    <div class="col-md-12">
+                        {form}
+                    </div>
+                    <div class="col-md-12">
+                    <table class="retrieval">
+                        {image}
+                    </table>
+                    </div>
+                    <div class="col-md-12">
+                        <br>
+                        <a href='./index.py'>Back to Index Page</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
 </html>
 '''.format(form=create_form(c, user), image=get_clothes(c)).strip()
 

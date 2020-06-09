@@ -5,63 +5,91 @@ def check_cookie(cookie):
     str = ''
     if 'user' in cookie:
         str += '''
-        <h2>Welcome {0}!</h2>
-        <a href='./recommender.py'>Today's Coordination</a>
-        <a href='./logout.py'>Sign Out</a>
+
+				<div class="row">
+                    <div class="col-md-12">
+                        <h2>Welcome {0}!</h2>
+                    </div>
+                    <div class="col-md-5 col-md-push-1">
+                        <a href='./recommender.py'>Today's Coordination</a>
+                    </div>
+                    <div class="col-md-3 col-md-push-2">
+                        <a href='./logout.py'>Sign Out</a>
+                    </div>
+                </div>
+
         '''.format(cookie['user'].value)
     else:
         str += '''
-        <a href='./login_form.py'>Sign In!</a>
-        <a href='./create_account.py'>Sign Up!</a>
+		<div class="row">
+            <div class="col-md-3 col-md-push-3">
+                <a href='./login_form.py'>Sign In!</a>
+            </div>
+            <div class="col-md-3 col-md-push-3">
+                <a href='./create_account.py'>Sign Up!</a>
+            </div>
+        </div>
         '''
     return str
 
 def retrieve_clothes(c, cookie):
     str = ''
     if 'user' in cookie:
-        str += '<p>Check Clothes Type and Get Summer Clothes Data!</p>'
+        str += '<div class="row"><div class="col-md-12"><h2>Check Clothes Type and Get Summer Clothes Data!</h2></div></div>'
         c.execute("SELECT gender FROM users WHERE userid = '{}' ;".format(user))
         for row in c:
             gender = row[0]
         if gender == 'men':
             str += textwrap.dedent('''
             <form action="./retrieval.py" method="GET">
-                <select name="type">
-                <option value="tshirt-cutsew">tshirt-cutsew</option>
-                <option value="shirt-blouse">shirt-blouse</option>
-                <option value="polo-shirt">polo-shirt</option>
-                <option value="denim-pants">denim-pants</option>
-                <option value="slacks">slacks</option>
-                <option value="pants">pants</option>
-                <option value="o-collar-jacket">o-collar-jacket</option>
-                <option value="tailored-jacket">tailored-jacket</option>
-                <option value="jacket">jacket</option>
-                <option value="nylon-jacket">nylon-jacket</option>
-                <option value="other-outer">other-outer</option>
-                </select>
-                <input type="submit" value="Let's Look Popular Clothes">
+                <div class="row">
+                    <div class="col-md-6">
+                        <select name="type">
+                        <option value="tshirt-cutsew">tshirt-cutsew</option>
+                        <option value="shirt-blouse">shirt-blouse</option>
+                        <option value="polo-shirt">polo-shirt</option>
+                        <option value="denim-pants">denim-pants</option>
+                        <option value="slacks">slacks</option>
+                        <option value="pants">pants</option>
+                        <option value="o-collar-jacket">o-collar-jacket</option>
+                        <option value="tailored-jacket">tailored-jacket</option>
+                        <option value="jacket">jacket</option>
+                        <option value="nylon-jacket">nylon-jacket</option>
+                        <option value="other-outer">other-outer</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="submit" value="Let's Look Popular Clothes">
+                    </div>
+                </div>
             </form>
             ''')
 
         elif gender == 'women':
             str += textwrap.dedent('''
             <form action="./retrieval.py" method="GET">
-                <select name="type">
-                <option value="tshirt-cutsew">tshirt-cutsew</option>
-                <option value="shirt-blouse">shirt-blouse</option>
-                <option value="knit-sweater">knit-sweater</option>
-                <option value="camisole">camisole</option>
-                <option value="denim-pants">denim-pants</option>
-                <option value="slacks">slacks</option>
-                <option value="pants">pants</option>
-                <option value="skirt">skirt</option>
-                <option value="no-collar-jacket">no-collar-jacket</option>
-                <option value="tailored-jacket">tailored-jacket</option>
-                <option value="jacket">jacket</option>
-                <option value="nylon-jacket">nylon-jacket</option>
-                <option value="other-outer">other-outer</option>
-                </select>
-                <input type="submit" value="Let's Look Popular Clothes">
+                <div class="row">
+                    <div class="col-md-6">
+                        <select name="type">
+                        <option value="tshirt-cutsew">tshirt-cutsew</option>
+                        <option value="shirt-blouse">shirt-blouse</option>
+                        <option value="knit-sweater">knit-sweater</option>
+                        <option value="camisole">camisole</option>
+                        <option value="denim-pants">denim-pants</option>
+                        <option value="slacks">slacks</option>
+                        <option value="pants">pants</option>
+                        <option value="skirt">skirt</option>
+                        <option value="no-collar-jacket">no-collar-jacket</option>
+                        <option value="tailored-jacket">tailored-jacket</option>
+                        <option value="jacket">jacket</option>
+                        <option value="nylon-jacket">nylon-jacket</option>
+                        <option value="other-outer">other-outer</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="submit" value="Let's Look Popular Clothes">
+                    </div>
+                </div>
             </form>
             ''')
 
@@ -109,12 +137,14 @@ html = '''
 <body>
   <div id="fh5co-wrap">
   	<header id="fh5co-header">
-			<div class="container">
-				<nav class="fh5co-main-nav">
-                  <h1>Dresser</h1>
-				</nav>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+                    <h1>Dresser</h1>
+				</div>
 			</div>
-		</header>
+        </div>
+	</header>
 
 		<div class="fh5co-hero" style="background-image: url(../images/hero_4.jpg);" data-stellar-background-ratio="0.5">
 			<div class="overlay"></div>

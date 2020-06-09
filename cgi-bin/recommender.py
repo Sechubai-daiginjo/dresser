@@ -387,12 +387,14 @@ html = textwrap.dedent('''
 <body>
   <div id="fh5co-wrap" style="background-color: #EEEEEE;">
   	<header id="fh5co-header">
-			<div class="container">
-				<nav class="fh5co-main-nav">
-          <h1>Dresser</h1>
-        </nav>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+                    <h1>Dresser</h1>
+				</div>
 			</div>
-		</header>
+        </div>
+	</header>
 
 	<div class="fh5co-section">
 		<div class="container">
