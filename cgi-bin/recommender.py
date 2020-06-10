@@ -40,27 +40,26 @@ def get_clothes(c, weather_data, user):
     temp_max = weather_data[5]
     str = ""
     str += textwrap.dedent('''
-				<div class="row">
-					<div class="col-md-4">
-                      <h2>
-                        Weather
-                        <p>{weather}</p>
-                      </h2>
-					</div>
-                    <div class="col-md-4">
-                      <h2>
-                        Highest Temperature
-                        <p>{temp_max}</p>
-                      </h2>
-                    </div>
-                    <div class="col-md-4">
-                      <h2>
-                        Lowest Temperature
-                        <p>{temp_min}</p>
-                      </h2>
-                    </div>
-                </div>
-
+	<div class="row">
+		<div class="col-md-4">
+            <h2>
+                Weather
+                <p>{weather}</p>
+            </h2>
+		</div>
+        <div class="col-md-4">
+            <h2>
+                Highest Temperature
+                <p>{temp_max}</p>
+            </h2>
+        </div>
+        <div class="col-md-4">
+            <h2>
+                Lowest Temperature
+                <p>{temp_min}</p>
+            </h2>
+        </div>
+    </div>
     ''').format(weather=weather, temp_max=temp_max, temp_min=temp_min)
 
     c.execute("SELECT GoodsTypePath FROM users_clothes WHERE userid = '{}' ;".format(user))

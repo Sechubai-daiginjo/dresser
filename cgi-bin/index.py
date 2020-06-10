@@ -5,19 +5,17 @@ def check_cookie(cookie):
     str = ''
     if 'user' in cookie:
         str += '''
-
-				<div class="row">
-                    <div class="col-md-12">
-                        <h2>Welcome {0}!</h2>
-                    </div>
-                    <div class="col-md-5 col-md-push-1">
-                        <a href='./recommender.py'>Today's Coordination</a>
-                    </div>
-                    <div class="col-md-3 col-md-push-2">
-                        <a href='./logout.py'>Sign Out</a>
-                    </div>
-                </div>
-
+		<div class="row">
+            <div class="col-md-12">
+                <h2>Welcome {0}!</h2>
+            </div>
+            <div class="col-md-5 col-md-push-1">
+                <a href='./recommender.py'>Today's Coordination</a>
+            </div>
+            <div class="col-md-3 col-md-push-2">
+                <a href='./logout.py'>Sign Out</a>
+            </div>
+        </div>
         '''.format(cookie['user'].value)
     else:
         str += '''

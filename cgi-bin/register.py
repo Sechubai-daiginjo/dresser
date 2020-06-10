@@ -75,11 +75,9 @@ def get_basic_clothes(form, c):
         print('Something Wrong ')
         exit()
     str += textwrap.dedent('''
-
 	<div class="col-md-2 col-md-push-5">
         <h3><input type="submit" value="Register your clothes" class="btn btn-primary"></h3>
     </div>
-        
     </form>
     ''')
     return str
@@ -143,7 +141,7 @@ html = textwrap.dedent('''
 <link rel="stylesheet" href="../css/test.css">
 </head>
 
-<body style="background-color: #ffefd5;">
+<body>
 <div id="fh5co-wrap">
     <div class="large-div">
   	    <header id="fh5co-header">
@@ -178,14 +176,14 @@ html = textwrap.dedent('''
 </div>
 
 <footer id="fh5co-footer">
-	  <div class="container">
-		    <div class="row">
+	<div class="container">
+		<div class="row">
             <div class="col-md-4">
-				        <h3>About Us</h3>
-				        <p class="footer-font">Fashion Coordinates Recommender and Searching System Using Weather Forecast in Summer Season</p>
-			      </div>
+				<h3>About Us</h3>
+				<p class="footer-font">Fashion Coordinates Recommender and Searching System Using Weather Forecast in Summer Season</p>
+			</div>
         </div>
-	  </div>
+	</div>
 </footer>
 
 </body>
