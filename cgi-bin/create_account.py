@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 #encoding:UTF-8
-#def sign_up_with_twitter():
-    #Twitterログイン認証の実装
-
-
+# Twitterログイン認証URLの生成
+def oauth(consumer_key, consumer_secret, callback_url):
+    auth = tweepy.OAuthHandler(consumer_key, consumer_secret, callback_url)
+    redirect_url = auth.get_authorization_url()
+    return redirect_url
 #---------------------------------------------
 # プログラム本体
 #---------------------------------------------
@@ -12,9 +13,26 @@ import cgitb
 import textwrap
 from http import cookies
 import io,sys
+import json
+import tweepy
 # UnicodeEncodeErrorを防ぐ
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 C = cookies.SimpleCookie()
+
+############################### 要変更 ###############################
+# jsonファイルからapiキーを読み込み
+#ローカル
+json_open = open("./oauth_keys.json",'r')
+#本番環境
+#json_open = open("../oauth_keys.json",'r')
+json_load = json.load(json_open)
+consumer_key = json_load["consumer_key"]
+consumer_secret = json_load["consumer_secret"]
+############################### 要変更 ###############################
+#ローカル
+callback_url = "http://localhost:8000/cgi-bin/twi_create.py"
+#本番環境
+#callback_url = "http://160.16.217.69/dresser/cgi-bin/twi_create.py"
 
 cgitb.enable()
 print("Content-Type: text/html; charset=UTF-8\n\n")
@@ -53,7 +71,7 @@ html ='''
 					        <div class="col-md-12">
                                 <div class="row">
 							        <div class="col-md-12">
-                                        <h2>Twitterから新規登録</h2>
+                                        <a href="{}">Twitterから新規登録</a>
                                     </div>
                                 </div>
                             </div>
@@ -117,6 +135,6 @@ html ='''
 
 </body>
 </html>
-'''.format().strip()
+'''.format(oauth(consumer_key, consumer_secret, callback_url)).strip()
 
 print(html)
