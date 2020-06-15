@@ -78,14 +78,25 @@ html ='''
             </div>
         </div>
     </div>
-</div>
 
+</div>
 <footer id="fh5co-footer">
 	<div class="container">
 		<div class="row">
+        <br>
+        <br>
+        <br>
             <div class="col-md-4">
 				<h3>About Us</h3>
 				<p class="footer-font">Fashion Coordinates Recommender and Searching System Using Weather Forecast in Summer Season</p>
+			</div>
+            <div class="col-md-4">
+				<h3>Member</h3>
+				<p class="footer-font">
+                Shingo Watanabe (Owner, Backend)<br>
+                Tomoya Iwamoto (Member, Frontend)<br>
+                Sho Shimamura (Member, Backend)<br>
+                </p>
 			</div>
         </div>
 	</div>

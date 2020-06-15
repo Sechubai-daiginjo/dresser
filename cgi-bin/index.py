@@ -145,7 +145,7 @@ html = '''
         </div>
 	</header>
 
-	<div class="fh5co-hero" style="background-image: url(../images/hero_4.jpg);" data-stellar-background-ratio="0.5">
+	<div class="fh5co-hero" style="background-image: url(../images/H72116c1.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 			<div class="container">
 				<div class="row">
@@ -155,7 +155,7 @@ html = '''
                                 {get}
                             </h2>
                                 {retrieval}
-                            
+
                             <h1>About Our App</h1>
                             <p>Fashion Coordinates Recommender and Searching System Using Weather Forecast in Summer Season</p>
 						</div>
@@ -173,6 +173,17 @@ html = '''
 				<h3>About Us</h3>
 				<p class="footer-font">Fashion Coordinates Recommender and Searching System Using Weather Forecast in Summer Season</p>
 			</div>
+            <div class="col-md-4">
+				<h3>Pulms in Snow</h3>
+				<p class="footer-font">
+                <a href='https://github.com/Sechubai-daiginjo/dresser'> 
+                <img src='../images/37318.png'　width="80" height="100">
+                Source Code </a><br>
+                Shingo Watanabe (Owner, Backend)<br>
+                Tomoya Iwamoto (Member, Frontend)<br>
+                Sho Shimamura (Member, Backend)<br>
+                </p>
+			</div>
         </div>
 	</div>
 </footer>
@@ -182,5 +193,5 @@ html = '''
 '''.format(get = check_cookie(cookie), retrieval = retrieve_clothes(c, cookie)).strip()
 
 print(html)
-#print(cookie)
+print(cookie)
 #print('cookie type =', cookie.value)

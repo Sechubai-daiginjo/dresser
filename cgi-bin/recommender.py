@@ -84,7 +84,7 @@ def get_clothes(c, weather_data, user):
                             <h2>
                                 <img src={} />
                             </h2>
-                        </div>   
+                        </div>
                         ''').format(src[0])
 
                 elif int(temp_max) >= 23 and row == ' shirt-blouse' and 'tops' not in count:
@@ -99,7 +99,7 @@ def get_clothes(c, weather_data, user):
                             <h2>
                                 <img src={} />
                             </h2>
-                        </div>      
+                        </div>
                         ''').format(src[0])
 
                 elif int(temp_max) >= 23 and row == ' polo-shirt' and 'tops' not in count:
@@ -114,7 +114,7 @@ def get_clothes(c, weather_data, user):
                             <h2>
                                 <img src={} />
                             </h2>
-                        </div>  
+                        </div>
                         ''').format(src[0])
 
                 elif int(temp_max) >= 17 and temp_max < 23 and row == ' tshirt-cutsew' and 'tops' not in count:
@@ -172,7 +172,7 @@ def get_clothes(c, weather_data, user):
                         <h2>
                             <img src={} />
                         </h2>
-                    </div>  
+                    </div>
                     ''').format(src[0])
                 count.append('pants')
 
@@ -193,7 +193,7 @@ def get_clothes(c, weather_data, user):
                             <h2>
                                 <img src={} />
                             </h2>
-                        </div>  
+                        </div>
                         ''').format(src[0])
 
                 elif int(temp_max) >= 23 and row == ' shirt-blouse' and 'tops' not in count:
@@ -253,7 +253,7 @@ def get_clothes(c, weather_data, user):
                             <h2>
                                 <img src={} />
                             </h2>
-                        </div> 
+                        </div>
                         ''').format(src[0])
 
                 elif int(temp_max) < 17 and row == ' parka' and 'tops' not in count:
@@ -283,7 +283,7 @@ def get_clothes(c, weather_data, user):
                         <h2>
                             <img src={} />
                         </h2>
-                    </div>   
+                    </div>
                     ''').format(src[0])
                 count.append('pants')
                 count.append('onepiece')
@@ -354,9 +354,9 @@ if 'user' in cookie:
     user = cookie['user'].value
     print("Set-Cookie: user="+ user)
 #ローカル
-conn = sqlite3.connect('./clothes/dresser.db')
+#conn = sqlite3.connect('./clothes/dresser.db')
 #本番環境
-#conn = sqlite3.connect('../clothes/dresser.db')
+conn = sqlite3.connect('../clothes/dresser.db')
 c = conn.cursor()
 
 
@@ -374,7 +374,7 @@ html = textwrap.dedent('''
 <link rel="stylesheet" href="../css/icomoon.css">
 <link rel="stylesheet" href="../css/test.css">
 </head>
-  
+
 <body>
 <div id="fh5co-wrap">
     <div class="large-div">

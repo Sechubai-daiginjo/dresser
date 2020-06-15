@@ -14,7 +14,7 @@ import io,sys
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 # クッキーの取得
 #cookie = cookies.SimpleCookie(os.environ.get("HTTP_COOKIE",""))
-#cookie
+#user = cookie['user'].pop
 
 #クッキーの有効期限を設定
 print("Set-Cookie: Max-Age = 0.00001")
@@ -44,7 +44,7 @@ html = '''
 			          </div>
             </div>
 	      </header>
- 
+
         <div class="fh5co-section">
 		        <div class="container">
                 <div class="row">
@@ -63,7 +63,7 @@ html = '''
         </div>
     </div>
 </div>
-  
+
 <footer id="fh5co-footer">
     <div class="container">
 		    <div class="row">
@@ -78,5 +78,5 @@ html = '''
 </body>
 </html>
 '''
-#print(user)
 print(html)
+#print(user)

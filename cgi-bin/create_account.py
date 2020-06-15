@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
 #encoding:UTF-8
-#def sign_up_with_twitter():
-    #Twitterログイン認証の実装
-
 
 #---------------------------------------------
 # プログラム本体
@@ -44,7 +41,7 @@ html ='''
 			    </div>
             </div>
 	    </header>
-    
+
 	    <div class="fh5co-section">
 		    <div class="container">
                 <div class="row">
@@ -78,7 +75,7 @@ html ='''
                                 <input type = "password" class="form-control" name = "password" minlength='8' id='pass' placeholder="Password">
                             </div>
                             <div class="col-md-12">
-                            </div>    
+                            </div>
 					        <div class="col-md-6 col-md-push-3">
                                 <h2>Gender</h2>
                                 <input type="radio" name="gender" value="men" checked="checked">Men
