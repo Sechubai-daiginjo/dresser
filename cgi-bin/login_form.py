@@ -27,9 +27,9 @@ consumer_key = json_load["consumer_key"]
 consumer_secret = json_load["consumer_secret"]
 ############################### 要変更 ###############################
 # ローカル用
-callback_url = "http://localhost:8000/cgi-bin/twi_login.py" 
+callback_url = "http://localhost:8000/cgi-bin/twi_login.py"
 # 本番用
-#callback_url = "http://160.16.217.69/dresser/cgi-bin/twi_login.py" 
+#callback_url = "http://160.16.217.69/dresser/cgi-bin/twi_login.py"
 
 print("Content-Type: text/html; charset=UTF-8\n\n")
 print()
