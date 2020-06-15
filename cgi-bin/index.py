@@ -7,7 +7,7 @@ def check_cookie(cookie):
         str += '''
 		<div class="row">
             <div class="col-md-12">
-                <h2>Welcome {0}!</h2>
+                <h2 style="color:white">Welcome {0}!</h2>
             </div>
             <div class="col-md-5 col-md-push-1">
                 <a href='./recommender.py'>Today's Coordination</a>
@@ -33,7 +33,7 @@ def check_cookie(cookie):
 def retrieve_clothes(c, cookie):
     str = ''
     if 'user' in cookie:
-        str += '<div class="row"><div class="col-md-12"><h2>Check Clothes Type and Get Summer Clothes Data!</h2></div></div>'
+        str += '<div class="row"><div class="col-md-12"><h2 style="color:white">Check Clothes Type and Get Summer Clothes Data!</h2></div></div>'
         c.execute("SELECT gender FROM users WHERE userid = '{}' ;".format(user))
         for row in c:
             gender = row[0]
