@@ -109,9 +109,9 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 # クッキーの取得
 cookie = cookies.SimpleCookie(os.environ.get("HTTP_COOKIE",""))
 #ローカル
-conn = sqlite3.connect('./clothes/dresser.db')
+#conn = sqlite3.connect('./clothes/dresser.db')
 #本番環境
-#conn = sqlite3.connect('../clothes/dresser.db')
+conn = sqlite3.connect('../clothes/dresser.db')
 c = conn.cursor()
 cgitb.enable()
 # クッキーが生成されていたらuserとして遷移先のページでもクッキーを渡し続ける処理
@@ -176,7 +176,7 @@ html = '''
             <div class="col-md-4">
 				<h3>Pulms in Snow</h3>
 				<p class="footer-font">
-                <a href='https://github.com/Sechubai-daiginjo/dresser'> 
+                <a href='https://github.com/Sechubai-daiginjo/dresser'>
                 <img src='../images/37318.png'　width="80" height="100">
                 Source Code </a><br>
                 Shingo Watanabe (Owner, Backend)<br>
