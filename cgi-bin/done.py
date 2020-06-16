@@ -36,9 +36,9 @@ cookie = cookies.SimpleCookie(os.environ.get("HTTP_COOKIE",""))
 user = cookie['user'].value
 cgitb.enable()
 #ローカル
-conn = sqlite3.connect('./clothes/dresser.db')
+#conn = sqlite3.connect('./clothes/dresser.db')
 #本番環境
-#conn = sqlite3.connect('../clothes/dresser.db')
+conn = sqlite3.connect('../clothes/dresser.db')
 c = conn.cursor()
 # クッキーを生成しuser_id を遷移先のページに渡す
 print("Set-Cookie: user="+ user)
@@ -68,7 +68,7 @@ html = textwrap.dedent('''
 <link rel="stylesheet" href="../css/icomoon.css">
 <link rel="stylesheet" href="../css/test.css">
 </head>
-    
+
 <body>
 <div id="fh5co-wrap">
     <div class="large-div">
@@ -81,7 +81,7 @@ html = textwrap.dedent('''
 			    </div>
             </div>
 	    </header>
-        
+
         <div class="fh5co-section">
 		    <div class="container">
 			    <div class="row">

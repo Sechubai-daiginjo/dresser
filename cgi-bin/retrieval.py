@@ -65,7 +65,7 @@ def get_clothes(c):
     form = cgi.FieldStorage()
     type = form['type'].value
     str = textwrap.dedent('''
-    
+
     <tr>
      <th>Looks</th>
      <th>Name</th>
@@ -113,9 +113,9 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 # クッキーの取得
 cookie = cookies.SimpleCookie(os.environ.get("HTTP_COOKIE",""))
 #ローカル
-conn = sqlite3.connect('./clothes/dresser.db')
+#conn = sqlite3.connect('./clothes/dresser.db')
 #本番環境
-#conn = sqlite3.connect('../clothes/dresser.db')
+conn = sqlite3.connect('../clothes/dresser.db')
 c = conn.cursor()
 cgitb.enable()
 # クッキーが生成されていたらuserとして遷移先のページでもクッキーを渡し続ける処理
@@ -161,7 +161,7 @@ html = '''
 			    </div>
             </div>
 	    </header>
-    
+
         <div class="fh5co-section">
 		    <div class="container">
                 <div class="row">

@@ -50,11 +50,11 @@ def get_basic_clothes(form, c):
             c.execute("SELECT DefaultImagePath, GoodsTypePath FROM basic_men WHERE TypeCategoryPath = '{}' order by random() limit 5;".format(category))
             for row in c:
                 str += textwrap.dedent('''
-				<div class="tyuou col-md-6">                
+				<div class="tyuou col-md-6">
                     <img src={} />
                     <p><input type="checkbox" name="{}" value="{}" > I have like this one</p>
                     <br></br>
-                </div>  
+                </div>
                 ''').format(row[0], row[1], row[1])
 
 
@@ -123,9 +123,9 @@ cookie = cookies.SimpleCookie()
 user_id = form['user_id'].value
 cgitb.enable()
 #ローカル
-conn = sqlite3.connect('./clothes/dresser.db')
+#conn = sqlite3.connect('./clothes/dresser.db')
 #本番環境
-#conn = sqlite3.connect('../clothes/dresser.db')
+conn = sqlite3.connect('../clothes/dresser.db')
 c = conn.cursor()
 # クッキーを生成しuser_id を遷移先のページに渡す
 print("Set-Cookie: user="+ user_id)
@@ -177,9 +177,9 @@ html = textwrap.dedent('''
 				            <div class="top-space-40 col-md-12">
                                 <h1>Update Completed!</h1>
                             </div>
-                            <div class="col-md-12">               
+                            <div class="col-md-12">
                                 <h2>Please register your clothes</h2>
-                            </div>   
+                            </div>
                             {0}
                         </div>
                     </div>

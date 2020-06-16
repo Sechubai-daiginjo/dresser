@@ -32,16 +32,14 @@ function check2(){
   result1 = userid_value.match(regObj);
   result2 = password_value.match(regObj);
 
-  if (result1){
-    if(userid_value.length <= 0 || password_value.length <= 0){
-      ret = false; alert("userid & password are necessary.");
-    }else if(result1){
-      ret = false; alert("HTMLタグは使えません");
-    }else if(result2){
-      ret = false; alert("HTMLタグは使えません");
-    }else{
-      ret = true;
-    }
-    return ret;
+  if(userid_value.length <= 0 || password_value.length <= 0){
+    ret = false; alert("userid & password are necessary.");
+  }else if(result1){
+    ret = false; alert("HTMLタグは使えません");
+  }else if(result2){
+    ret = false; alert("HTMLタグは使えません");
+  }else{
+    ret = true;
   }
+  return ret;
 }
