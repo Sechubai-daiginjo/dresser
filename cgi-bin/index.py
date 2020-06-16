@@ -112,9 +112,9 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 # クッキーの取得
 cookie = cookies.SimpleCookie(os.environ.get("HTTP_COOKIE",""))
 #ローカル
-conn = sqlite3.connect('./clothes/dresser.db')
+#conn = sqlite3.connect('./clothes/dresser.db')
 #本番環境
-#conn = sqlite3.connect('../clothes/dresser.db')
+conn = sqlite3.connect('../clothes/dresser.db')
 c = conn.cursor()
 cgitb.enable()
 # クッキーが生成されていたらuserとして遷移先のページでもクッキーを渡し続ける処理

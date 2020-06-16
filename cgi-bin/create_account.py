@@ -32,9 +32,9 @@ consumer_key = json_load["consumer_key"]
 consumer_secret = json_load["consumer_secret"]
 ############################### 要変更 ###############################
 #ローカル
-callback_url = "http://localhost:8000/cgi-bin/twi_create.py"
+#callback_url = "http://localhost:8000/cgi-bin/twi_create.py"
 #本番環境
-#callback_url = "http://160.16.217.69/dresser/cgi-bin/twi_create.py"
+callback_url = "http://160.16.217.69/dresser/cgi-bin/twi_create.py"
 
 cgitb.enable()
 print("Content-Type: text/html; charset=UTF-8\n\n")

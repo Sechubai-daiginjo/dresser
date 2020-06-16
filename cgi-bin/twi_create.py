@@ -126,7 +126,7 @@ html ='''
                             </div>
                             <div class="col-md-12">
                             </div>
-					        <div class="col-md-6 col-md-push-3">
+					        <div class="top-space-50 col-md-12">
                                 <div class="submit">
                                     <input type = "submit" value = "resister" class="btn btn-primary">
                                 </div>
