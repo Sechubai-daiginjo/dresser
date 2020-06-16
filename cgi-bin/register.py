@@ -50,9 +50,9 @@ def get_basic_clothes(form, c):
             c.execute("SELECT DefaultImagePath, GoodsTypePath FROM basic_men WHERE TypeCategoryPath = '{}' order by random() limit 5;".format(category))
             for row in c:
                 str += textwrap.dedent('''
-				<div class="col-md-6">                
+				<div class="tyuou col-md-6">                
                     <img src={} />
-                    <h3><input type="checkbox" name="{}" value="{}" > I have like this one</h3>
+                    <p><input type="checkbox" name="{}" value="{}" > I have like this one</p>
                     <br></br>
                 </div>  
                 ''').format(row[0], row[1], row[1])
@@ -64,9 +64,9 @@ def get_basic_clothes(form, c):
             c.execute("SELECT DefaultImagePath, GoodsTypePath FROM basic_women WHERE TypeCategoryPath = '{}' order by random() limit 5;".format(category))
             for row in c:
                 str += textwrap.dedent('''
-				<div class="col-md-6">
+				<div class="tyuou col-md-6">
                     <img src={} />
-                    <h3><input type="checkbox" name="{}" value="{}" > I have like this one</h3>
+                    <p><input type="checkbox" name="{}" value="{}" > I have like this one</p>
                     <br></br>
                 </div>
                 ''').format(row[0], row[1], row[1])
@@ -75,8 +75,10 @@ def get_basic_clothes(form, c):
         print('Something Wrong ')
         exit()
     str += textwrap.dedent('''
-	<div class="col-md-2 col-md-push-5">
-        <h3><input type="submit" value="Register your clothes" class="btn btn-primary"></h3>
+	<div class="col-md-12">
+        <div class="submit">
+            <input type="submit" value="Register your clothes" class="btn btn-primary">
+        </div>
     </div>
     </form>
     ''')
@@ -133,7 +135,20 @@ html = textwrap.dedent('''
 <!DOCTYPE html>
 <html lang = "ja">
 <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
 <title>Dresser</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Fashion Coordinates Recommender and Searching System Using Weather Forecast in Summer Season" />
+<meta name="keywords" content="dresser, fashion, coodinate, recommend, search, summer, tops, pants, onepiece, outwear" />
+<meta name="author" content="Sechubai" />
+
+<meta property="og:title" content="dresser"/>
+<meta property="og:image" content="../images/dresser.jpg"/>
+<meta property="og:site_name" content="dresser"/>
+<meta property="og:description" content="Fashion Coordinates Recommender and Searching System Using Weather Forecast in Summer Season"/>
+
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/animate.css">
 <link rel="stylesheet" href="../css/bootstrap.css">
@@ -148,7 +163,7 @@ html = textwrap.dedent('''
 		    <div class="container">
 			    <div class="row">
 				    <div class="col-md-4">
-                        <h1>Dresser</h1>
+                        <h1 class="logo">Dresser</h1>
 				    </div>
 			    </div>
             </div>
@@ -157,9 +172,9 @@ html = textwrap.dedent('''
         <div class="fh5co-section">
 		    <div class="container">
 			    <div class="row">
-                    <div class="middle-div">
+                    <div class="middle-div col-md-12">
 				        <div class="row">
-				            <div class="col-md-12">
+				            <div class="top-space-40 col-md-12">
                                 <h1>Update Completed!</h1>
                             </div>
                             <div class="col-md-12">               
@@ -179,7 +194,7 @@ html = textwrap.dedent('''
 	<div class="container">
 		<div class="row">
             <div class="col-md-4">
-				<h3>About Us</h3>
+				<h3>About Our App</h3>
 				<p class="footer-font">Fashion Coordinates Recommender and Searching System Using Weather Forecast in Summer Season</p>
 			</div>
         </div>

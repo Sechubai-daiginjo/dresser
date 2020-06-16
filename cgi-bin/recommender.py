@@ -40,26 +40,20 @@ def get_clothes(c, weather_data, user):
     temp_max = weather_data[5]
     str = ""
     str += textwrap.dedent('''
-	<div class="row">
-		<div class="col-md-4">
-            <h2>
-                Weather
-                <p>{weather}</p>
-            </h2>
+	
+		<div class="tyuou col-md-4">
+            <h2>Weather</h2>
+            <p>{weather}</p>
 		</div>
-        <div class="col-md-4">
-            <h2>
-                Highest Temperature
-                <p>{temp_max}</p>
-            </h2>
+        <div class="tyuou col-md-4">
+            <h2>Max Temperature</h2>
+            <p class="red">{temp_max}</p>
         </div>
-        <div class="col-md-4">
-            <h2>
-                Lowest Temperature
-                <p>{temp_min}</p>
-            </h2>
+        <div class="tyuou col-md-4">
+            <h2>Min Temperature</h2>
+            <p class="blue">{temp_min}</p>
         </div>
-    </div>
+    
     ''').format(weather=weather, temp_max=temp_max, temp_min=temp_min)
 
     c.execute("SELECT GoodsTypePath FROM users_clothes WHERE userid = '{}' ;".format(user))
@@ -77,13 +71,9 @@ def get_clothes(c, weather_data, user):
                     count.append('tops')
                     for src in c:
                         str += textwrap.dedent('''
-					    <div class="col-md-6">
-                            <h1>
-                                <p>Tops</p>
-                            </h1>
-                            <h2>
-                                <img src={} />
-                            </h2>
+					    <div class="tyuou col-md-6">
+                            <h2>Tops</h2>
+                            <p><img src={} /></p>
                         </div>   
                         ''').format(src[0])
 
@@ -92,13 +82,9 @@ def get_clothes(c, weather_data, user):
                     count.append('tops')
                     for src in c:
                         str += textwrap.dedent('''
-					    <div class="col-md-6">
-                             <h1>
-                                <p>Tops</p>
-                            </h1>
-                            <h2>
-                                <img src={} />
-                            </h2>
+					    <div class="tyuou col-md-6">
+                            <h2>Tops</h2>
+                            <p><img src={} /></p>
                         </div>      
                         ''').format(src[0])
 
@@ -107,13 +93,9 @@ def get_clothes(c, weather_data, user):
                     count.append('tops')
                     for src in c:
                         str += textwrap.dedent('''
-					    <div class="col-md-6">
-                            <h1>
-                                <p>Tops</p>
-                            </h1>
-                            <h2>
-                                <img src={} />
-                            </h2>
+					    <div class="tyuou col-md-6">
+                            <h2>Tops</h2>
+                            <p><img src={} /></p>
                         </div>  
                         ''').format(src[0])
 
@@ -121,26 +103,18 @@ def get_clothes(c, weather_data, user):
                     c.execute("SELECT DefaultImagePath FROM men_ranking WHERE TypeCategoryPath = 'jacket-outerwear' order by RANDOM() limit 1;")
                     for src in c:
                         str += textwrap.dedent('''
-					    <div class="col-md-6">
-                            <h1>
-                                <p>Tops</p>
-                            </h1>
-                            <h2>
-                                <img src={} />
-                            </h2>
+					    <div class="tyuou col-md-6">
+                            <h2>Tops</h2>
+                            <p><img src={} /></p>
                         </div>
                         ''').format(src[0])
                     c.execute("SELECT DefaultImagePath FROM men_ranking WHERE TypeCategoryPath = 'tshirt-cutsew' order by RANDOM() limit 1;")
                     count.append('tops')
                     for src in c:
                         str += textwrap.dedent('''
-					    <div class="col-md-6">
-                            <h1>
-                                <p>Tops</p>
-                            </h1>
-                            <h2>
-                                <img src={} />
-                            </h2>
+					    <div class="tyuou col-md-6">
+                            <h2>Tops</h2>
+                            <p><img src={} /></p>
                         </div>
                         ''').format(src[0])
 
@@ -149,13 +123,9 @@ def get_clothes(c, weather_data, user):
                     count.append('tops')
                     for src in c:
                         str = textwrap.dedent('''
-					    <div class="col-md-6">
-                            <h1>
-                                <p>Tops</p>
-                            </h1>
-                            <h2>
-                                <img src={} />
-                            </h2>
+					    <div class="tyuou col-md-6">
+                            <h2>Tops</h2>
+                            <p><img src={} /></p>
                         </div>
                         ''').format(src[0])
 
@@ -165,13 +135,9 @@ def get_clothes(c, weather_data, user):
                 c.execute("SELECT DefaultImagePath FROM men_ranking WHERE GoodsTypePath = '{}' order by RANDOM() limit 1;".format(row))
                 for src in c:
                     str += textwrap.dedent('''
-					<div class="col-md-6">
-                        <h1>
-                            <p>Pants</p>
-                        </h1>
-                        <h2>
-                            <img src={} />
-                        </h2>
+					<div class="tyuou col-md-6">
+                        <h2>Pants</h2>
+                        <p><img src={} /></p>
                     </div>  
                     ''').format(src[0])
                 count.append('pants')
@@ -186,13 +152,9 @@ def get_clothes(c, weather_data, user):
                     count.append('onepiece')
                     for src in c:
                         str += textwrap.dedent('''
-					    <div class="col-md-6">
-                            <h1>
-                                <p>Tops</p>
-                            </h1>
-                            <h2>
-                                <img src={} />
-                            </h2>
+					    <div class="tyuou col-md-6">
+                            <h2>Tops</h2>
+                            <p><img src={} /></p>
                         </div>  
                         ''').format(src[0])
 
@@ -202,13 +164,9 @@ def get_clothes(c, weather_data, user):
                     count.append('onepiece')
                     for src in c:
                         str += textwrap.dedent('''
-					    <div class="col-md-6">
-                            <h1>
-                                <p>Tops</p>
-                            </h1>
-                            <h2>
-                                <img src={} />
-                            </h2>
+					    <div class="tyuou col-md-6">
+                            <h2>Tops</h2>
+                            <p><img src={} /></p>
                         </div>
                         ''').format(src[0])
 
@@ -218,13 +176,9 @@ def get_clothes(c, weather_data, user):
                     count.append('onepiece')
                     for src in c:
                         str += textwrap.dedent('''
-					    <div class="col-md-6">
-                            <h1>
-                                <p>Tops</p>
-                            </h1>
-                            <h2>
-                                <img src={} />
-                            </h2>
+					    <div class="tyuou col-md-6">
+                            <h2>Tops</h2>
+                            <p><img src={} /></p>
                         </div>
                         ''').format(src[0])
 
@@ -232,13 +186,9 @@ def get_clothes(c, weather_data, user):
                     c.execute("SELECT DefaultImagePath FROM women_ranking WHERE TypeCategoryPath = 'jacket-outerwear' order by RANDOM() limit 1;")
                     for src in c:
                         str += textwrap.dedent('''
-					    <div class="col-md-6">
-                            <h1>
-                                <p>Outerwear</p>
-                            </h1>
-                            <h2>
-                                <img src={} />
-                            </h2>
+					    <div class="tyuou col-md-6">
+                            <h2>Outerwear</h2>
+                            <p><img src={} /></p>
                         </div>
                         ''').format(src[0])
                     c.execute("SELECT DefaultImagePath FROM women_ranking WHERE TypeCategoryPath = 'tshirt-cutsew' order by RANDOM() limit 1;")
@@ -246,13 +196,9 @@ def get_clothes(c, weather_data, user):
                     count.append('onepiece')
                     for src in c:
                         str += textwrap.dedent('''
-					    <div class="col-md-6">
-                            <h1>
-                                <p>Tops</p>
-                            </h1>
-                            <h2>
-                                <img src={} />
-                            </h2>
+					    <div class="tyuou col-md-6">
+                            <h2>Tops</h2>
+                            <p><img src={} /></p>
                         </div> 
                         ''').format(src[0])
 
@@ -262,13 +208,9 @@ def get_clothes(c, weather_data, user):
                     count.append('onepiece')
                     for src in c:
                         str += textwrap.dedent('''
-					    <div class="col-md-6">
-                            <h1>
-                                <p>Tops</p>
-                            </h1>
-                            <h2>
-                                <img src={} />
-                            </h2>
+					    <div class="tyuou col-md-6">
+                            <h2>Tops</h2>
+                            <p><img src={} /></p>
                         </div>
                         ''').format(src[0])
             elif (row == ' denim-pants' or row == ' pants' or row ==' skirt') and 'pants' not in count:
@@ -276,13 +218,9 @@ def get_clothes(c, weather_data, user):
                 c.execute("SELECT DefaultImagePath FROM women_ranking WHERE GoodsTypePath = '{}' order by RANDOM() limit 1;".format(row))
                 for src in c:
                     str += textwrap.dedent('''
-					<div class="col-md-6">
-                        <h1>
-                            <p>Pants or Skirt</p>
-                        </h1>
-                        <h2>
-                            <img src={} />
-                        </h2>
+					<div class="tyuou col-md-6">
+                        <h2>Pants or Skirt</h2>
+                        <p><img src={} /></p>
                     </div>   
                     ''').format(src[0])
                 count.append('pants')
@@ -293,13 +231,9 @@ def get_clothes(c, weather_data, user):
                 c.execute("SELECT DefaultImagePath FROM women_ranking WHERE GoodsTypePath = '{}' order by RANDOM() limit 1;".format(row))
                 for src in c:
                     str += textwrap.dedent('''
-					<div class="col-md-6">
-                        <h1>
-                            <p>Onepiece</p>
-                        </h1>
-                        <h2>
-                            <img src={} />
-                        </h2>
+					<div class="tyuou col-md-6">
+                        <h2>Onepiece</h2>
+                        <p><img src={} /></p>
                     </div>
                     ''').format(src[0])
                 count.append('onepiece')
@@ -316,14 +250,8 @@ def do_func():
     #print(weather_data)
     get = get_clothes(c, weather_data, user)
     str = textwrap.dedent('''
-    <div class="fh5co-section">
-		<div class="container">
-            <div class="row">
-				<div class="col-md-12">
-                    <h1>Today's Coordination for You!</h1>
-                </div>
-            </div>
-        </div>
+	<div class="tyuou top-space-40 col-md-12">
+        <h1>Today's Coordination for You!</h1>
     </div>
     {get}
     ''').format(get=get)
@@ -367,7 +295,20 @@ html = textwrap.dedent('''
 <!DOCTYPE html>
 <html lang = "ja">
 <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
 <title>Dresser</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Fashion Coordinates Recommender and Searching System Using Weather Forecast in Summer Season" />
+<meta name="keywords" content="dresser, fashion, coodinate, recommend, search, summer, tops, pants, onepiece, outwear" />
+<meta name="author" content="Sechubai" />
+
+<meta property="og:title" content="dresser"/>
+<meta property="og:image" content="../images/dresser.jpg"/>
+<meta property="og:site_name" content="dresser"/>
+<meta property="og:description" content="Fashion Coordinates Recommender and Searching System Using Weather Forecast in Summer Season"/>
+
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/animate.css">
 <link rel="stylesheet" href="../css/bootstrap.css">
@@ -382,7 +323,7 @@ html = textwrap.dedent('''
 		    <div class="container">
 			    <div class="row">
 				    <div class="col-md-4">
-                        <h1>Dresser</h1>
+                        <h1 class="logo">Dresser</h1>
 				    </div>
 			    </div>
             </div>
@@ -391,15 +332,12 @@ html = textwrap.dedent('''
 	    <div class="fh5co-section">
 		    <div class="container">
                 <div class="row">
-                    <div class="middle-div">
+                    <div class="middle-div col-md-12">
                         <div class="row">
-                            <div class="col-md-12">
-                                {}
+                            {}
+                            <div class="tyuou top-space-50 col-md-12">
+                                <p><a href='./index.py'>Back to Index Page</a></p>
                             </div>
-                        </div>
-                        <div class="col-md-12">
-                            </br>
-                            <h4><a href='./index.py'>Back to Index Page</a></h4>
                         </div>
                     </div>
                 </div>
@@ -414,7 +352,7 @@ html = textwrap.dedent('''
 	<div class="container">
 		<div class="row">
             <div class="col-md-4">
-				<h3>About Us</h3>
+				<h3>About Our App</h3>
 				<p class="footer-font">Fashion Coordinates Recommender and Searching System Using Weather Forecast in Summer Season</p>
 			</div>
         </div>

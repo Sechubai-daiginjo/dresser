@@ -23,7 +23,20 @@ html ='''
 <!DOCTYPE html><html lang = "ja">
 
 <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
 <title>Dresser</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Fashion Coordinates Recommender and Searching System Using Weather Forecast in Summer Season" />
+<meta name="keywords" content="dresser, fashion, coodinate, recommend, search, summer, tops, pants, onepiece, outwear" />
+<meta name="author" content="Sechubai" />
+
+<meta property="og:title" content="dresser"/>
+<meta property="og:image" content="../images/dresser.jpg"/>
+<meta property="og:site_name" content="dresser"/>
+<meta property="og:description" content="Fashion Coordinates Recommender and Searching System Using Weather Forecast in Summer Season"/>
+
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/animate.css">
 <link rel="stylesheet" href="../css/bootstrap.css">
@@ -39,7 +52,7 @@ html ='''
 		    <div class="container">
 			    <div class="row">
 				    <div class="col-md-4">
-                        <h1>Dresser</h1>
+                        <h1 class="logo">Dresser</h1>
 				    </div>
 			    </div>
             </div>
@@ -48,15 +61,12 @@ html ='''
 	    <div class="fh5co-section">
 		    <div class="container">
                 <div class="row">
-                    <div class="login-div">
-                        <div class="row">
-					        <div class="col-md-12">
-                                <div class="row">
-							        <div class="col-md-12">
-                                        <h2>Twitterから新規登録</h2>
-                                    </div>
-                                </div>
-                            </div>
+					<div class="col-md-6 col-md-push-3">
+                        <div class="twitter_login">  
+                            <i class="icon-twitter"></i>
+                            <b>Twitterから新規登録</b>  
+                        </div>
+                    </div>
 
                             <!-- Twitterでログインするやつをかく -->
 
@@ -67,6 +77,10 @@ html ='''
                               onsubmit = "return check();"
                             >
 
+                    <div class="col-md-12">
+                    </div>
+                    <div class="middle-div col-md-6 col-md-push-3">
+                        <div class="row">
 					        <div class="col-md-6 col-md-push-3">
                                 <h2>User ID</h2>
                                 <input type = "text" class="form-control" name = "user_id" id='name' placeholder="User ID">
@@ -90,11 +104,10 @@ html ='''
                                 <h2>Zip Code</h2>
                                 <input type="text" class="form-control" name="zipcode" size="40" maxlength="8" id='zip' placeholder="Zip Code">
                             </div>
-                            <div class="col-md-12">
-                            </br>
-                            </div>
-					        <div class="col-md-6 col-md-push-3">
-                                <p><input type = "submit" value = "resister" class="btn btn-primary"></p>
+					        <div class="top-space-50 col-md-12">
+                                <div class="submit">
+                                    <input type = "submit" value = "resister" class="btn btn-primary">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -108,7 +121,7 @@ html ='''
 	<div class="container">
 		<div class="row">
             <div class="col-md-4">
-				<h3>About Us</h3>
+				<h3>About Our App</h3>
 				<p class="footer-font">Fashion Coordinates Recommender and Searching System Using Weather Forecast in Summer Season</p>
 			</div>
         </div>

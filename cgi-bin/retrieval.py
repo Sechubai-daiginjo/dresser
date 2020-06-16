@@ -9,7 +9,7 @@ def create_form(c, user):
         str = textwrap.dedent('''
         <form action="./retrieval.py" method="GET">
             <div class="row">
-                <div class="col-md-2 col-md-push-4">
+                <div class="top-space-40 col-md-2 col-md-push-4">
                     <select name="type">
                     <option value="tshirt-cutsew">tshirt-cutsew</option>
                     <option value="shirt-blouse">shirt-blouse</option>
@@ -24,7 +24,7 @@ def create_form(c, user):
                     <option value="other-outer">other-outer</option>
                     </select>
                 </div>
-                <div class="col-md-2 col-md-push-4">            
+                <div class="top-space-40 col-md-2 col-md-push-4">            
                     <input type="submit" value="Let's Look Popular Clothes" class="btn btn-primary">
                 </div>
             </div>
@@ -35,7 +35,7 @@ def create_form(c, user):
         str = textwrap.dedent('''
         <form action="./retrieval.py" method="GET">
             <div class="row">
-                <div class="col-md-2 col-md-push-4">
+                <div class="top-space-40 col-md-2 col-md-push-4">
                     <select name="type">
                     <option value="tshirt-cutsew">tshirt-cutsew</option>
                     <option value="shirt-blouse">shirt-blouse</option>
@@ -52,7 +52,7 @@ def create_form(c, user):
                     <option value="other-outer">other-outer</option>
                     </select>
                 </div>
-                <div class="col-md-2 col-md-push-4"> 
+                <div class="top-space-40 col-md-2 col-md-push-4"> 
                     <input type="submit" value="Let's Look Popular Clothes" class="btn btn-primary">
                 </div>
             </div>
@@ -128,7 +128,20 @@ html = '''
 <html lang = "ja">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta charset="utf-8">
 <title>Dresser</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Fashion Coordinates Recommender and Searching System Using Weather Forecast in Summer Season" />
+<meta name="keywords" content="dresser, fashion, coodinate, recommend, search, summer, tops, pants, onepiece, outwear" />
+<meta name="author" content="Sechubai" />
+
+<meta property="og:title" content="dresser"/>
+<meta property="og:image" content="../images/dresser.jpg"/>
+<meta property="og:site_name" content="dresser"/>
+<meta property="og:description" content="Fashion Coordinates Recommender and Searching System Using Weather Forecast in Summer Season"/>
+
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/animate.css">
 <link rel="stylesheet" href="../css/bootstrap.css">
@@ -143,7 +156,7 @@ html = '''
 		    <div class="container">
 			    <div class="row">
 				    <div class="col-md-4">
-                        <h1>Dresser</h1>
+                        <h1 class="logo">Dresser</h1>
 				    </div>
 			    </div>
             </div>
@@ -154,9 +167,8 @@ html = '''
                 <div class="row">
                     <div class="middle-div">
 				        <div class="row">
-                            <div class="col-md-12">
-                                <h2>Let's Look Popular Clothes</h2>
-                                </br>
+                            <div class="tyuou top-space-40 col-md-12">
+                                <h1>Let's Look Popular Clothes</h1>
                             </div>
                             <div class="col-md-12">
                                 {form}
@@ -167,9 +179,8 @@ html = '''
                                     {image}
                                 </table>
                             </div>
-                            <div class="col-md-12">
-                                </br>
-                                <h4><a href='./index.py'>Back to Index Page</a></h4>
+                            <div class="tyuou top-space-50 col-md-12">
+                                <p><a href='./index.py'>Back to Index Page</a></p>
                             </div>
                         </div>
                     </div>
@@ -183,7 +194,7 @@ html = '''
 	<div class="container">
 		<div class="row">
             <div class="col-md-4">
-				<h3>About Us</h3>
+				<h3>About Our App</h3>
 				<p class="footer-font">Fashion Coordinates Recommender and Searching System Using Weather Forecast in Summer Season</p>
 			</div>
         </div>

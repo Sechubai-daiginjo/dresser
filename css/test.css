@@ -1,15 +1,3 @@
-.test {
-    background-color: #EEEEEE;
-  }
-
-  .test {
-    background-color: #7f7f7f;
-  }
-  
-  .retrieval {
-
-  }
-    
   table {
     margin-left: auto;
     margin-right: auto;
@@ -55,16 +43,8 @@
     height: 500px;
   }
 
-  .middle-div {
-    width:1200px;
-    margin-left:auto;
-    margin-right:auto;
-    text-align:center;
-    background-color: #FFFFFF;
-  }
-
   .footer-font {
-    color: #d3d3d3;
+    color: #a3a3a3;
   }
 
   .large-div {
@@ -78,3 +58,77 @@
     text-align:center;
     background-color: #FFFFFF;
   }
+
+  .twitter_login {
+    background: #1DA1F2;
+    color: #FFFFFF;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  .submit {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .middle-div {
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  p {
+    font-size:20px;
+  }
+
+  .tyuou {
+    text-align: center;
+  }
+
+  .white {
+    color: #FFFFFF;
+  }
+
+  .red {
+    color: red;
+  }
+
+  .blue {
+    color: blue;
+  }
+
+  .logo {
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  .logo::first-letter {
+    font-size: 1.5em;
+    color: #6b8e23;
+  }
+
+  .top-space-10 {
+    margin-top: 10px;
+  }
+
+  .top-space-20 {
+    margin-top: 20px;
+  }
+
+  .top-space-30 {
+    margin-top: 30px;
+  }
+
+  .top-space-40 {
+    margin-top: 40px;
+  }
+
+  .top-space-50 {
+    margin-top: 50px;
+  }
+
+  

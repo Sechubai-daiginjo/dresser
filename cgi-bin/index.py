@@ -10,10 +10,13 @@ def check_cookie(cookie):
                 <h2>Welcome {0}!</h2>
             </div>
             <div class="col-md-5 col-md-push-1">
-                <a href='./recommender.py'>Today's Coordination</a>
+                <a href='./recommender.py'>
+                    <button type="button" class="btn btn-primary btn-lg">Today's Coordination</button>
+                </a>
+                
             </div>
             <div class="col-md-3 col-md-push-2">
-                <a href='./logout.py'>Sign Out</a>
+                <p><a href='./logout.py'>Sign Out</a></p>
             </div>
         </div>
         '''.format(cookie['user'].value)
@@ -21,10 +24,10 @@ def check_cookie(cookie):
         str += '''
 		<div class="row">
             <div class="col-md-3 col-md-push-3">
-                <a href='./login_form.py'>Sign In!</a>
+                <p><a href='./login_form.py'>Sign In!</a></p>
             </div>
             <div class="col-md-3 col-md-push-3">
-                <a href='./create_account.py'>Sign Up!</a>
+                <p><a href='./create_account.py'>Sign Up!</a></p>
             </div>
         </div>
         '''
@@ -33,7 +36,7 @@ def check_cookie(cookie):
 def retrieve_clothes(c, cookie):
     str = ''
     if 'user' in cookie:
-        str += '<div class="row"><div class="col-md-12"><h2>Check Clothes Type and Get Summer Clothes Data!</h2></div></div>'
+        str += '<div class="row"><div class="white top-space-20 col-md-12"><h2>Check Clothes Type and Get Summer Clothes Data!</h2></div></div>'
         c.execute("SELECT gender FROM users WHERE userid = '{}' ;".format(user))
         for row in c:
             gender = row[0]
@@ -125,7 +128,20 @@ html = '''
 <html lang = "ja">
 
 <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
 <title>Dresser</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Fashion Coordinates Recommender and Searching System Using Weather Forecast in Summer Season" />
+<meta name="keywords" content="dresser, fashion, coodinate, recommend, search, summer, tops, pants, onepiece, outwear" />
+<meta name="author" content="Sechubai" />
+
+<meta property="og:title" content="dresser"/>
+<meta property="og:image" content="../images/dresser.jpg"/>
+<meta property="og:site_name" content="dresser"/>
+<meta property="og:description" content="Fashion Coordinates Recommender and Searching System Using Weather Forecast in Summer Season"/>
+
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/animate.css">
 <link rel="stylesheet" href="../css/bootstrap.css">
@@ -139,23 +155,20 @@ html = '''
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4">
-                    <h1>Dresser</h1>
+                    <h1 class="logo">Dresser</h1>
 				</div>
 			</div>
         </div>
 	</header>
 
-	<div class="fh5co-hero" style="background-image: url(../images/hero_4.jpg);" data-stellar-background-ratio="0.5">
+	<div class="fh5co-hero" style="background-image: url(../images/dresser.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
 						<div class="fh5co-intro fh5co-table-cell">
-                            <h2>
                                 {get}
-                            </h2>
                                 {retrieval}
-                            
                             <h1>About Our App</h1>
                             <p>Fashion Coordinates Recommender and Searching System Using Weather Forecast in Summer Season</p>
 						</div>
@@ -170,7 +183,7 @@ html = '''
 	<div class="container">
 		<div class="row">
             <div class="col-md-4">
-				<h3>About Us</h3>
+				<h3>About Our App</h3>
 				<p class="footer-font">Fashion Coordinates Recommender and Searching System Using Weather Forecast in Summer Season</p>
 			</div>
         </div>
