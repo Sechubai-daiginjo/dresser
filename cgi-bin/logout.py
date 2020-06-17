@@ -52,12 +52,12 @@ html = '''
 		    <div class="container">
 			    <div class="row">
 				    <div class="col-md-4">
-                        <h1 class="logo">Dresser</h1>
+                        <h1 class="logo"><a href='./index.py'>Dresser</a></h1>
 				    </div>
 			    </div>
             </div>
 	    </header>
-        
+
         <div class="fh5co-section">
 		    <div class="container">
                 <div class="row">

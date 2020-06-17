@@ -74,19 +74,19 @@ html ='''
 		    <div class="container">
 			    <div class="row">
 				    <div class="col-md-4">
-                        <h1 class="logo">Dresser</h1>
+                        <h1 class="logo"><a href='./index.py'>Dresser</a></h1>
 				    </div>
 			    </div>
             </div>
 	    </header>
-    
+
 	    <div class="fh5co-section">
 		    <div class="container">
                 <div class="row">
 					<div class="col-md-12">
 
                     </div>
-                
+
 
                             <!-- Twitterでログインするやつをかく -->
 
@@ -112,7 +112,7 @@ html ='''
                                 <input type = "password" class="form-control" name = "password" minlength='8' id='pass' placeholder="Password">
                             </div>
                             <div class="col-md-12">
-                            </div>    
+                            </div>
 					        <div class="col-md-6 col-md-push-3">
                                 <h2>Gender</h2>
                                 <input type="radio" name="gender" value="men" checked="checked">Men

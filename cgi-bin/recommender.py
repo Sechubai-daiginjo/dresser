@@ -40,7 +40,7 @@ def get_clothes(c, weather_data, user):
     temp_max = weather_data[5]
     str = ""
     str += textwrap.dedent('''
-	
+
 		<div class="tyuou col-md-4">
             <h2>Weather</h2>
             <p>{weather}</p>
@@ -53,7 +53,7 @@ def get_clothes(c, weather_data, user):
             <h2>Min Temperature</h2>
             <p class="blue">{temp_min}</p>
         </div>
-    
+
     ''').format(weather=weather, temp_max=temp_max, temp_min=temp_min)
 
     c.execute("SELECT GoodsTypePath FROM users_clothes WHERE userid = '{}' ;".format(user))
@@ -74,7 +74,7 @@ def get_clothes(c, weather_data, user):
 					    <div class="tyuou col-md-6">
                             <h2>Tops</h2>
                             <p><img src={} /></p>
-                        </div>   
+                        </div>
                         ''').format(src[0])
 
                 elif int(temp_max) >= 23 and row == ' shirt-blouse' and 'tops' not in count:
@@ -86,7 +86,7 @@ def get_clothes(c, weather_data, user):
 					    <div class="tyuou col-md-6">
                             <h2>Tops</h2>
                             <p><img src={} /></p>
-                        </div>      
+                        </div>
 =======
 					    <div class="col-md-6">
                              <h1>
@@ -107,7 +107,7 @@ def get_clothes(c, weather_data, user):
 					    <div class="tyuou col-md-6">
                             <h2>Tops</h2>
                             <p><img src={} /></p>
-                        </div>  
+                        </div>
                         ''').format(src[0])
 
                 elif int(temp_max) >= 17 and temp_max < 23 and row == ' tshirt-cutsew' and 'tops' not in count:
@@ -149,7 +149,7 @@ def get_clothes(c, weather_data, user):
 					<div class="tyuou col-md-6">
                         <h2>Pants</h2>
                         <p><img src={} /></p>
-                    </div>  
+                    </div>
                     ''').format(src[0])
                 count.append('pants')
 
@@ -166,7 +166,7 @@ def get_clothes(c, weather_data, user):
 					    <div class="tyuou col-md-6">
                             <h2>Tops</h2>
                             <p><img src={} /></p>
-                        </div>  
+                        </div>
                         ''').format(src[0])
 
                 elif int(temp_max) >= 23 and row == ' shirt-blouse' and 'tops' not in count:
@@ -210,7 +210,7 @@ def get_clothes(c, weather_data, user):
 					    <div class="tyuou col-md-6">
                             <h2>Tops</h2>
                             <p><img src={} /></p>
-                        </div> 
+                        </div>
                         ''').format(src[0])
 
                 elif int(temp_max) < 17 and row == ' parka' and 'tops' not in count:
@@ -232,7 +232,7 @@ def get_clothes(c, weather_data, user):
 					<div class="tyuou col-md-6">
                         <h2>Pants or Skirt</h2>
                         <p><img src={} /></p>
-                    </div>   
+                    </div>
                     ''').format(src[0])
                 count.append('pants')
                 count.append('onepiece')
@@ -334,7 +334,7 @@ html = textwrap.dedent('''
 		    <div class="container">
 			    <div class="row">
 				    <div class="col-md-4">
-                        <h1 class="logo">Dresser</h1>
+                        <h1 class="logo"><a href='./index.py'>Dresser</a></h1>
 				    </div>
 			    </div>
             </div>

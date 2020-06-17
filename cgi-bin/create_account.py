@@ -72,7 +72,7 @@ html ='''
 		    <div class="container">
 			    <div class="row">
 				    <div class="col-md-4">
-                        <h1 class="logo">Dresser</h1>
+                        <h1 class="logo"><a href='./index.py'>Dresser</a></h1>
 				    </div>
 			    </div>
             </div>
@@ -82,10 +82,10 @@ html ='''
 		    <div class="container">
                 <div class="row">
 					<div class="col-md-6 col-md-push-3">
-                        <div class="twitter_login">  
+                        <div class="twitter_login">
                             <i class="icon-twitter"></i>
                             <b>Twitterから新規登録</b>
-                            <a class="link" href="{}"></a>  
+                            <a class="link" href="{}"></a>
                         </div>
                     </div>
 

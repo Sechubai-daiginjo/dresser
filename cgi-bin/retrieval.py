@@ -24,7 +24,7 @@ def create_form(c, user):
                     <option value="other-outer">other-outer</option>
                     </select>
                 </div>
-                <div class="top-space-40 col-md-2 col-md-push-4">            
+                <div class="top-space-40 col-md-2 col-md-push-4">
                     <input type="submit" value="Let's Look Popular Clothes" class="btn btn-primary">
                 </div>
             </div>
@@ -52,7 +52,7 @@ def create_form(c, user):
                     <option value="other-outer">other-outer</option>
                     </select>
                 </div>
-                <div class="top-space-40 col-md-2 col-md-push-4"> 
+                <div class="top-space-40 col-md-2 col-md-push-4">
                     <input type="submit" value="Let's Look Popular Clothes" class="btn btn-primary">
                 </div>
             </div>
@@ -156,7 +156,7 @@ html = '''
 		    <div class="container">
 			    <div class="row">
 				    <div class="col-md-4">
-                        <h1 class="logo">Dresser</h1>
+                        <h1 class="logo"><a href='./index.py'>Dresser</a></h1>
 				    </div>
 			    </div>
             </div>

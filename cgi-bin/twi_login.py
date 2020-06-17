@@ -57,7 +57,7 @@ for s in response:
         user["user_id"] = s.split("=")[1]
     elif s.split("=")[0] == "screen_name":
         user["screen_name"] = s.split("=")[1]
-        
+
 c = conn.cursor()
 form = cgi.FieldStorage()
 # ユーザidはtwitterのスクリーンネームに
@@ -98,12 +98,12 @@ html = textwrap.dedent('''
 		    <div class="container">
 			    <div class="row">
 				    <div class="col-md-4">
-                        <h1 class="logo">Dresser</h1>
+                        <h1 class="logo"><a href='./index.py'>Dresser</a></h1>
 				    </div>
 			    </div>
             </div>
 	    </header>
-        
+
         <div class="fh5co-section">
 		    <div class="container">
 			    <div class="row">

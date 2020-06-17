@@ -13,7 +13,7 @@ def check_cookie(cookie):
                 <a href='./recommender.py'>
                     <button type="button" class="btn btn-primary btn-lg">Today's Coordination</button>
                 </a>
-                
+
             </div>
             <div class="col-md-3 col-md-push-2">
                 <p><a href='./logout.py'>Sign Out</a></p>
@@ -155,13 +155,13 @@ html = '''
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4">
-                    <h1 class="logo">Dresser</h1>
+                    <h1 class="logo"><a href='./index.py'>Dresser</a></h1>
 				</div>
 			</div>
         </div>
 	</header>
 
-	<div class="fh5co-hero" style="background-image: url(../images/dresser.jpg);" data-stellar-background-ratio="0.5">
+	<div class="fh5co-hero" style="background-image: url(../images/H72116c1.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 			<div class="container">
 				<div class="row">

@@ -27,9 +27,9 @@ consumer_key = json_load["consumer_key"]
 consumer_secret = json_load["consumer_secret"]
 ############################### 要変更 ###############################
 # ローカル用
-#callback_url = "http://localhost:8000/cgi-bin/twi_login.py"
+callback_url = "http://localhost:8000/cgi-bin/twi_login.py"
 # 本番用
-callback_url = "http://160.16.217.69/dresser/cgi-bin/twi_login.py"
+#callback_url = "http://160.16.217.69/dresser/cgi-bin/twi_login.py"
 
 print("Content-Type: text/html; charset=UTF-8\n\n")
 print()
@@ -66,7 +66,7 @@ html ='''
 		    <div class="container">
 			    <div class="row">
 				    <div class="col-md-4">
-                        <h1 class="logo">Dresser</h1>
+                        <h1 class="logo"><a href='./index.py'>Dresser</a></h1>
 				    </div>
 			    </div>
             </div>
@@ -90,7 +90,7 @@ html ='''
                               name = "myform"
                               onsubmit = "return check2();"
                             >
-        
+
                     <div class="col-md-12">
                     </div>
                     <div class="middle-div col-md-6 col-md-push-3">
