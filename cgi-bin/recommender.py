@@ -82,21 +82,10 @@ def get_clothes(c, weather_data, user):
                     count.append('tops')
                     for src in c:
                         str += textwrap.dedent('''
-<<<<<<< HEAD
 					    <div class="tyuou col-md-6">
                             <h2>Tops</h2>
                             <p><img src={} /></p>
                         </div>
-=======
-					    <div class="col-md-6">
-                             <h1>
-                                <p>Tops</p>
-                            </h1>
-                            <h2>
-                                <img src={} />
-                            </h2>
-                        </div>
->>>>>>> eb2637c3d5fe3845374fcc53cb0bee41666475f7
                         ''').format(src[0])
 
                 elif int(temp_max) >= 23 and row == ' polo-shirt' and 'tops' not in count:
