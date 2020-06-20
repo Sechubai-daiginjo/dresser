@@ -40,7 +40,7 @@ def create_form(c, user):
                     <option value="tshirt-cutsew">tshirt-cutsew</option>
                     <option value="shirt-blouse">shirt-blouse</option>
                     <option value="knit-sweater">knit-sweater</option>
-                    <option value="camisole">camisole</option>
+                    <option value="onepiece">onepiece</option>
                     <option value="denim-pants">denim-pants</option>
                     <option value="slacks">slacks</option>
                     <option value="pants">pants</option>
