@@ -3,6 +3,7 @@
 def get(c, form):
     user_id = form['user_id'].value
     password = form['password'].value
+    str = ''
     c.execute("SELECT password FROM users WHERE userid = ?;", (user_id,))
     for row in c:
         # データベースの暗号化されたパスワードと、入力されたパスワードを暗号化したものを比較
@@ -10,14 +11,14 @@ def get(c, form):
             #かなり無理矢理インデックスページにリダイレクトする
             print('<meta http-equiv="refresh" content="0.01;URL=./index.py">')
 
-            str = textwrap.dedent('''
+            str += textwrap.dedent('''
             <p>Authentication succeeded</p>
             <p>You can enjoy our APP! </p>
             <a href='./index.py'>Back to index page</a>
             ''')
 
         else:
-            str = textwrap.dedent('''
+            str += textwrap.dedent('''
             <p>Authentication failed</p>
             <a href='./login_form.py'>Back to sign up page</a>
             ''')
